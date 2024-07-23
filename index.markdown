@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Search GitHub Repositories</h1>
-    <input type="text" id="search-input" placeholder="Search by tag...">
+    <input type="text" id="search-input" placeholder="Search by topic...">
     <ul id="repo-list"></ul>
 
     <script>
@@ -18,10 +18,14 @@
         function createIndex(repos) {
             return lunr(function () {
                 this.field('name');
-                this.field('tags');
+                this.field('topics');
 
                 repos.forEach(repo => {
-                    this.add(repo);
+                    this.add({
+                        'name': repo.name,
+                        'topics': repo.topics.join(' '),
+                        'id': repo.name
+                    });
                 });
             });
         }
