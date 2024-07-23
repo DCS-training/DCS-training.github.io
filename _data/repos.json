@@ -2,151 +2,329 @@
   {
     "name": "SentimentAnalysistimes",
     "url": "https://github.com/DCS-training/SentimentAnalysistimes",
-    "tags": []
+    "topics": [
+      "data-wrangling",
+      "digitised-doc-text-analysis",
+      "python",
+      "sentiment-analysis",
+      "text-analaysis",
+      "text-analysis"
+    ]
   },
   {
     "name": "Digital-Method-of-the-Month",
     "url": "https://github.com/DCS-training/Digital-Method-of-the-Month",
-    "tags": []
+    "topics": [
+      "3d-printing",
+      "3d-scanning",
+      "data-analysis",
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "digital-drawing-3d",
+      "digitised-doc-text-analysis",
+      "geographical-data",
+      "gis",
+      "good-practices-digital-research",
+      "machine-learning",
+      "network-analysis",
+      "open-research",
+      "preregistration",
+      "statistics",
+      "structured-data-analysis",
+      "text-analysis"
+    ]
   },
   {
     "name": "CDCS-Summer-School2021",
     "url": "https://github.com/DCS-training/CDCS-Summer-School2021",
-    "tags": []
+    "topics": [
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "digitised-doc-text-analysis",
+      "geographical-data",
+      "intro-to-programming",
+      "network-analysis",
+      "python",
+      "r",
+      "text-analysis"
+    ]
   },
   {
     "name": "R-Visualisation---Stats",
     "url": "https://github.com/DCS-training/R-Visualisation---Stats",
-    "tags": []
+    "topics": [
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "introduction-to-programming",
+      "r",
+      "statistics",
+      "structured-data-analysis"
+    ]
   },
   {
     "name": "DataVisualisationWithR",
     "url": "https://github.com/DCS-training/DataVisualisationWithR",
-    "tags": []
+    "topics": [
+      "data-analysis",
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "r"
+    ]
   },
   {
     "name": "LaTeXandOverleaf",
     "url": "https://github.com/DCS-training/LaTeXandOverleaf",
-    "tags": []
+    "topics": [
+      "good-practices-digital-research",
+      "latex",
+      "overleaf",
+      "text-formatting"
+    ]
   },
   {
     "name": "SpatialDataVisualisation",
     "url": "https://github.com/DCS-training/SpatialDataVisualisation",
-    "tags": []
+    "topics": [
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-visualisation",
+      "geographical-data",
+      "gis",
+      "qgis"
+    ]
   },
   {
     "name": "DH-RSE-SummerSchool",
     "url": "https://github.com/DCS-training/DH-RSE-SummerSchool",
-    "tags": []
+    "topics": [
+      "data-visualisation",
+      "data-wrangling-data-visualisation",
+      "r"
+    ]
   },
   {
     "name": "Data-Visualisation-Techniques",
     "url": "https://github.com/DCS-training/Data-Visualisation-Techniques",
-    "tags": []
+    "topics": [
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-vis"
+    ]
   },
   {
     "name": "LicensesAndCopyrights",
     "url": "https://github.com/DCS-training/LicensesAndCopyrights",
-    "tags": []
+    "topics": [
+      "copyright",
+      "good-practices-digital-research"
+    ]
   },
   {
     "name": "ShinyTutorial",
     "url": "https://github.com/DCS-training/ShinyTutorial",
-    "tags": []
+    "topics": [
+      "data-wrangling-data-vis",
+      "education",
+      "r",
+      "rmarkdown",
+      "shiny",
+      "shinyapps",
+      "tutorial"
+    ]
   },
   {
     "name": "python-intro21-22",
     "url": "https://github.com/DCS-training/python-intro21-22",
-    "tags": []
+    "topics": [
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "intro-to-programming",
+      "python"
+    ]
   },
   {
     "name": "DataVisualisationWithR2021",
     "url": "https://github.com/DCS-training/DataVisualisationWithR2021",
-    "tags": []
+    "topics": [
+      "data-analysis",
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "r"
+    ]
   },
   {
     "name": "nltk-intro",
     "url": "https://github.com/DCS-training/nltk-intro",
-    "tags": []
+    "topics": [
+      "digitised-doc-text-analysis",
+      "python",
+      "text-analysis"
+    ]
   },
   {
     "name": "Network-Analyisis-Python",
     "url": "https://github.com/DCS-training/Network-Analyisis-Python",
-    "tags": []
+    "topics": [
+      "data-analysis",
+      "network-analysis",
+      "python",
+      "structured-data-analysis"
+    ]
   },
   {
     "name": "Data-Wrangling-And-Vis-Pandas",
     "url": "https://github.com/DCS-training/Data-Wrangling-And-Vis-Pandas",
-    "tags": []
+    "topics": [
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "python"
+    ]
   },
   {
     "name": "R-QGISIntegratingSpatialAnalysis",
     "url": "https://github.com/DCS-training/R-QGISIntegratingSpatialAnalysis",
-    "tags": []
+    "topics": [
+      "data-analysis",
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "gis",
+      "qgis",
+      "r",
+      "spatial-analysis"
+    ]
   },
   {
     "name": "RelationalDBAndSQL",
     "url": "https://github.com/DCS-training/RelationalDBAndSQL",
-    "tags": []
+    "topics": [
+      "data-wrangling-data-vis",
+      "database",
+      "sql"
+    ]
   },
   {
     "name": "IntroToDatabases",
     "url": "https://github.com/DCS-training/IntroToDatabases",
-    "tags": []
+    "topics": [
+      "data-analysis",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "databases",
+      "sql"
+    ]
   },
   {
     "name": "WebscrapingNewsitesWithPython",
     "url": "https://github.com/DCS-training/WebscrapingNewsitesWithPython",
-    "tags": []
+    "topics": [
+      "digitised-doc-text-analysis",
+      "python",
+      "webscraping"
+    ]
   },
   {
     "name": "IntroToTextAnalysis",
     "url": "https://github.com/DCS-training/IntroToTextAnalysis",
-    "tags": []
+    "topics": [
+      "digitised-doc-text-analysis",
+      "python",
+      "text-analysis"
+    ]
   },
   {
     "name": "FurtherTextAnalysis",
     "url": "https://github.com/DCS-training/FurtherTextAnalysis",
-    "tags": []
+    "topics": [
+      "digitised-doc-text-analysis",
+      "python",
+      "text-analysis"
+    ]
   },
   {
     "name": "VisualisingDataInQGIS",
     "url": "https://github.com/DCS-training/VisualisingDataInQGIS",
-    "tags": []
+    "topics": [
+      "data-visualisation",
+      "data-wrangling-data-vis",
+      "geographical-data",
+      "gis",
+      "qgis"
+    ]
   },
   {
     "name": "IntroToQGIS",
     "url": "https://github.com/DCS-training/IntroToQGIS",
-    "tags": []
+    "topics": [
+      "geographical-data",
+      "gis",
+      "qgis"
+    ]
   },
   {
     "name": "PuttingSpatialDataOnlinewithMapbox",
     "url": "https://github.com/DCS-training/PuttingSpatialDataOnlinewithMapbox",
-    "tags": []
+    "topics": [
+      "geographical-data",
+      "gis",
+      "mapbox",
+      "web-tools"
+    ]
   },
   {
     "name": "WorkingWithHistoricalMaps",
     "url": "https://github.com/DCS-training/WorkingWithHistoricalMaps",
-    "tags": []
+    "topics": [
+      "geographical-data",
+      "gis",
+      "qgis"
+    ]
   },
   {
     "name": "VersionControl",
     "url": "https://github.com/DCS-training/VersionControl",
-    "tags": []
+    "topics": [
+      "good-practices-digital-research",
+      "version-control"
+    ]
   },
   {
     "name": "DigitalDrawingWithAutocad",
     "url": "https://github.com/DCS-training/DigitalDrawingWithAutocad",
-    "tags": []
+    "topics": [
+      "autocad",
+      "digital-drawing",
+      "digital-drawing-3d"
+    ]
   },
   {
     "name": "EffectiveDataVisualisation",
     "url": "https://github.com/DCS-training/EffectiveDataVisualisation",
-    "tags": []
+    "topics": [
+      "data-analysis",
+      "data-visualisation",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "python",
+      "spreadsheets"
+    ]
   },
   {
     "name": "Intro-to-Statistics",
     "url": "https://github.com/DCS-training/Intro-to-Statistics",
-    "tags": []
+    "topics": [
+      "data-analysis",
+      "data-wrangling",
+      "data-wrangling-data-vis",
+      "r",
+      "statistics",
+      "structured-data-analysis"
+    ]
   }
 ]
