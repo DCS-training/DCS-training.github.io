@@ -11,8 +11,15 @@
 
     <script>
         async function fetchRepos() {
-            const response = await fetch('/_data/repos.json');
-            return await response.json();
+            try {
+                const response = await fetch('/_data/repos.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching repos:', error);
+            }
         }
 
         function createIndex(repos) {
@@ -37,18 +44,27 @@
 
             results.forEach(result => {
                 const repo = repos.find(r => r.name === result.ref);
-                const li = document.createElement('li');
-                li.innerHTML = `<a href="${repo.url}">${repo.name}</a>`;
-                repoList.appendChild(li);
+                if (repo) {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${repo.url}">${repo.name}</a>`;
+                    repoList.appendChild(li);
+                }
             });
+
+            if (results.length === 0) {
+                repoList.innerHTML = '<li>No results found</li>';
+            }
         }
 
         document.getElementById('search-input').addEventListener('input', async function () {
             const query = this.value;
             const repos = await fetchRepos();
-            const index = createIndex(repos);
-            searchRepos(query, index, repos);
+            if (repos) {
+                const index = createIndex(repos);
+                searchRepos(query, index, repos);
+            }
         });
     </script>
 </body>
 </html>
+
