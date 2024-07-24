@@ -8,7 +8,7 @@
     <h1>Search GitHub Repositories</h1>
     <p>
     This page is set up to facilitate the use of the CDCS repositories. You can search the repositories either by topic or by title. 
-    Each repositiory will then contain a `readme.md` that will contain all the instruction on their content and how to use them.
+    Each repositiory will then contain a **readme.md** that will contain all the instruction on their content and how to use them.
     </p>
     <!-- Search by Topic -->
     <h2>Search by Topic</h2>
