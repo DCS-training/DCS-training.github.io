@@ -8,16 +8,18 @@
     <h1>Search GitHub Repositories</h1>
     
     <!-- Search by Topic -->
+    <h2>Search by Topic</h2>
     <div>
-        <input type="text" id="search-topic-input" placeholder="Search by topic...">
+        <input type="text" id="search-topic-input" placeholder="Search by topic">
         <select id="topic-select">
             <option value="">-- Select a Topic --</option>
         </select>
     </div>
     
     <!-- Search by Name -->
+    <h2>Search by Name</h2>
     <div>
-        <input type="text" id="search-name-input" placeholder="Search by repository name...">
+        <input type="text" id="search-name-input" placeholder="Search by repository name">
     </div>
     
     <ul id="repo-list"></ul>
