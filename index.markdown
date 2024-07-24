@@ -6,10 +6,20 @@
 </head>
 <body>
     <h1>Search GitHub Repositories</h1>
-    <input type="text" id="search-input" placeholder="Search by topic...">
-    <select id="topic-select">
-        <option value="">-- Select a Topic --</option>
-    </select>
+    
+    <!-- Search by Topic -->
+    <div>
+        <input type="text" id="search-topic-input" placeholder="Search by topic...">
+        <select id="topic-select">
+            <option value="">-- Select a Topic --</option>
+        </select>
+    </div>
+    
+    <!-- Search by Name -->
+    <div>
+        <input type="text" id="search-name-input" placeholder="Search by repository name...">
+    </div>
+    
     <ul id="repo-list"></ul>
 
     <script>
@@ -26,16 +36,16 @@
             return substrings;
         }
 
-        function createIndex(repos) {
+        function createIndex(repos, field) {
             return lunr(function () {
                 this.field('name');
-                this.field('topics');
+                this.field(field);
 
                 repos.forEach(repo => {
-                    const topicSubstrings = repo.topics.flatMap(topic => createSubstrings(topic));
+                    const fieldSubstrings = createSubstrings(repo[field].join ? repo[field].join(' ') : repo[field]);
                     this.add({
                         'name': repo.name,
-                        'topics': topicSubstrings.join(' '),
+                        [field]: fieldSubstrings.join(' '),
                         'id': repo.name
                     });
                 });
@@ -79,17 +89,23 @@
 
         function initialize() {
             if (repos) {
-                const index = createIndex(repos);
+                const topicIndex = createIndex(repos, 'topics');
+                const nameIndex = createIndex(repos, 'name');
                 populateTopicSelect(repos);
 
-                document.getElementById('search-input').addEventListener('input', function () {
+                document.getElementById('search-topic-input').addEventListener('input', function () {
                     const query = this.value;
-                    searchRepos(query, index, repos);
+                    searchRepos(query, topicIndex, repos);
                 });
 
                 document.getElementById('topic-select').addEventListener('change', function () {
                     const query = this.value;
-                    searchRepos(query, index, repos);
+                    searchRepos(query, topicIndex, repos);
+                });
+
+                document.getElementById('search-name-input').addEventListener('input', function () {
+                    const query = this.value;
+                    searchRepos(query, nameIndex, repos);
                 });
             }
         }
