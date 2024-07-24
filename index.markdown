@@ -6,28 +6,33 @@
 </head>
 <body>
     <h1>Search GitHub Repositories</h1>
-    
+    <p>
+    This page is set up to facilitate the use of the CDCS repositories. You can search the repositories either by topic or by title. 
+    Each repositiory will then contain a `readme.md` that will contain all the instruction on their content and how to use them.
+    </p>
     <!-- Search by Topic -->
     <h2>Search by Topic</h2>
+    <p>
+    You can use the search functions below to subselect the repositories based on the topics they cover.
+    </p>
+    <p>
+    You can either type a topic or select one from the drop down menu
+    </p>
     <div>
         <input type="text" id="search-topic-input" placeholder="Search by topic">
         <select id="topic-select">
             <option value="">-- Select a Topic --</option>
         </select>
     </div>
-    
     <!-- Search by Name -->
     <h2>Search by Name</h2>
     <div>
         <input type="text" id="search-name-input" placeholder="Search by repository name">
     </div>
-    
     <ul id="repo-list"></ul>
-
     <script>
         const repos = {{ site.data.repos | jsonify }};
         console.log('Fetched repositories:', repos);
-
         function createSubstrings(str) {
             const substrings = [];
             for (let i = 0; i < str.length; i++) {
@@ -37,12 +42,10 @@
             }
             return substrings;
         }
-
         function createIndex(repos, field) {
             return lunr(function () {
                 this.field('name');
                 this.field(field);
-
                 repos.forEach(repo => {
                     const fieldSubstrings = createSubstrings(repo[field].join ? repo[field].join(' ') : repo[field]);
                     this.add({
@@ -53,15 +56,12 @@
                 });
             });
         }
-
         function populateTopicSelect(repos) {
             const topicSelect = document.getElementById('topic-select');
             const uniqueTopics = new Set();
-
             repos.forEach(repo => {
                 repo.topics.forEach(topic => uniqueTopics.add(topic));
             });
-
             uniqueTopics.forEach(topic => {
                 const option = document.createElement('option');
                 option.value = topic;
@@ -69,12 +69,10 @@
                 topicSelect.appendChild(option);
             });
         }
-
         function searchRepos(query, index, repos) {
             const results = index.search(`*${query}*`);
             const repoList = document.getElementById('repo-list');
             repoList.innerHTML = '';
-
             results.forEach(result => {
                 const repo = repos.find(r => r.name === result.ref);
                 if (repo) {
@@ -83,35 +81,29 @@
                     repoList.appendChild(li);
                 }
             });
-
             if (results.length === 0) {
                 repoList.innerHTML = '<li>No results found</li>';
             }
         }
-
         function initialize() {
             if (repos) {
                 const topicIndex = createIndex(repos, 'topics');
                 const nameIndex = createIndex(repos, 'name');
                 populateTopicSelect(repos);
-
                 document.getElementById('search-topic-input').addEventListener('input', function () {
                     const query = this.value;
                     searchRepos(query, topicIndex, repos);
                 });
-
                 document.getElementById('topic-select').addEventListener('change', function () {
                     const query = this.value;
                     searchRepos(query, topicIndex, repos);
                 });
-
                 document.getElementById('search-name-input').addEventListener('input', function () {
                     const query = this.value;
                     searchRepos(query, nameIndex, repos);
                 });
             }
         }
-
         initialize();
     </script>
 </body>
