@@ -14,8 +14,6 @@
     <h2>Search by Topic</h2>
     <p>
     You can use the search functions below to subselect the repositories based on the topics they cover.
-    </p>
-    <p>
     You can either type a topic or select one from the drop down menu
     </p>
     <div>
@@ -24,8 +22,15 @@
             <option value="">-- Select a Topic --</option>
         </select>
     </div>
+    <p>
+    </p>
+    <p>
+    </p>
     <!-- Search by Name -->
     <h2>Search by Name</h2>
+    <p>
+    You can use the search function below to subselect based on the title of the repository. 
+    </p>
     <div>
         <input type="text" id="search-name-input" placeholder="Search by repository name">
     </div>
