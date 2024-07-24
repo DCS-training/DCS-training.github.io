@@ -7,6 +7,9 @@
 <body>
     <h1>Search GitHub Repositories</h1>
     <input type="text" id="search-input" placeholder="Search by topic...">
+    <select id="topic-select">
+        <option value="">-- Select a Topic --</option>
+    </select>
     <ul id="repo-list"></ul>
 
     <script>
@@ -37,6 +40,22 @@
             });
         }
 
+        function populateTopicSelect(repos) {
+            const topicSelect = document.getElementById('topic-select');
+            const uniqueTopics = new Set();
+
+            repos.forEach(repo => {
+                repo.topics.forEach(topic => uniqueTopics.add(topic));
+            });
+
+            uniqueTopics.forEach(topic => {
+                const option = document.createElement('option');
+                option.value = topic;
+                option.textContent = topic;
+                topicSelect.appendChild(option);
+            });
+        }
+
         function searchRepos(query, index, repos) {
             const results = index.search(query);
             const repoList = document.getElementById('repo-list');
@@ -56,15 +75,25 @@
             }
         }
 
-        document.getElementById('search-input').addEventListener('input', async function () {
-            const query = this.value;
+        async function initialize() {
             const repos = await fetchRepos();
             if (repos) {
                 const index = createIndex(repos);
-                searchRepos(query, index, repos);
+                populateTopicSelect(repos);
+
+                document.getElementById('search-input').addEventListener('input', function () {
+                    const query = this.value;
+                    searchRepos(query, index, repos);
+                });
+
+                document.getElementById('topic-select').addEventListener('change', function () {
+                    const query = this.value;
+                    searchRepos(query, index, repos);
+                });
             }
-        });
+        }
+
+        initialize();
     </script>
 </body>
 </html>
-
