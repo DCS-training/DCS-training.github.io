@@ -18,16 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Search among the repositories 
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: Centre for Data, Culture & Society Training Material on GitHub
+email: cdcs@ed.ac.uk
+description: 
+  This page can be used to easily navigate the repositories associated with the Centre for Data, Culture & Society Training Programme. Please note that all material is covered by a CC-BYNC 4.0 License
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: EdCDCS
+github_username:  Lucia-Michielin
 
 # Build settings
 theme: minima
