@@ -8,13 +8,13 @@
     <h1>Search GitHub Repositories</h1>
     <p>
     This page is set up to facilitate the use of the CDCS repositories. You can search the repositories either by topic or by title. 
-    Each repositiory will then contain a **readme.md** that will contain all the instruction on their content and how to use them.
+    Each repository will contain a **readme.md** with instructions on their content and how to use them.
     </p>
     <!-- Search by Topic -->
     <h2>Search by Topic</h2>
     <p>
-    You can use the search functions below to subselect the repositories based on the topics they cover.
-    You can either type a topic or select one from the drop down menu
+    You can use the search functions below to filter the repositories based on the topics they cover.
+    You can either type a topic or select one from the drop-down menu.
     </p>
     <div>
         <input type="text" id="search-topic-input" placeholder="Search by topic">
@@ -22,14 +22,10 @@
             <option value="">-- Select a Topic --</option>
         </select>
     </div>
-    <p>
-    </p>
-    <p>
-    </p>
     <!-- Search by Name -->
     <h2>Search by Name</h2>
     <p>
-    You can use the search function below to subselect based on the title of the repository. 
+    Use the search function below to filter based on the repository name.
     </p>
     <div>
         <input type="text" id="search-name-input" placeholder="Search by repository name">
@@ -70,16 +66,18 @@
             });
             // Convert Set to array and sort alphabetically
             const sortedTopics = Array.from(uniqueTopics).sort();
+            // Debug: log sorted topics
+            console.log('Sorted topics:', sortedTopics);
             // Clear previous options
             topicSelect.innerHTML = '<option value="">-- Select a Topic --</option>';
             // Add sorted topics to the dropdown
             sortedTopics.forEach(topic => {
-               const option = document.createElement('option');
-               option.value = topic;
-               option.textContent = topic;
-               topicSelect.appendChild(option);
+                const option = document.createElement('option');
+                option.value = topic;
+                option.textContent = topic;
+                topicSelect.appendChild(option);
             });
-}
+        }
         function searchRepos(query, index, repos) {
             const results = index.search(`*${query}*`);
             const repoList = document.getElementById('repo-list');
@@ -102,19 +100,20 @@
                 const nameIndex = createIndex(repos, 'name');
                 populateTopicSelect(repos);  // Populate the dropdown with sorted topics
                 document.getElementById('search-topic-input').addEventListener('input', function () {
-                const query = this.value;
-                searchRepos(query, topicIndex, repos);
+                    const query = this.value;
+                    searchRepos(query, topicIndex, repos);
                 });
                 document.getElementById('topic-select').addEventListener('change', function () {
                     const query = this.value;
-                     searchRepos(query, topicIndex, repos);
-                     });
-        document.getElementById('search-name-input').addEventListener('input', function () {
-            const query = this.value;
-            searchRepos(query, nameIndex, repos);
-        });
-    }
-}
+                    searchRepos(query, topicIndex, repos);
+                });
+                document.getElementById('search-name-input').addEventListener('input', function () {
+                    const query = this.value;
+                    searchRepos(query, nameIndex, repos);
+                });
+            }
+        }
+        initialize();
     </script>
 </body>
 </html>
