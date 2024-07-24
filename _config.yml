@@ -28,7 +28,7 @@ twitter_username: EdCDCS
 github_username:  Lucia-Michielin
 
 # Build settings
-theme: jekyll-theme-minimal
+theme: jekyll-theme-bay
 plugins:
   # - jekyll-feed
 
