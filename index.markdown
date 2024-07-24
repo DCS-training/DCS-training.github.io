@@ -13,17 +13,9 @@
     <ul id="repo-list"></ul>
 
     <script>
-        async function fetchRepos() {
-            try {
-                const response = await fetch('/_data/repos.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return await response.json();
-            } catch (error) {
-                console.error('Error fetching repos:', error);
-            }
-        }
+        // Using Jekyll to inject the repos.json data
+        const repos = {{ site.data.repos | jsonify }};
+        console.log('Fetched repositories:', repos); // Debugging line
 
         function createIndex(repos) {
             return lunr(function () {
@@ -47,6 +39,8 @@
             repos.forEach(repo => {
                 repo.topics.forEach(topic => uniqueTopics.add(topic));
             });
+
+            console.log('Unique topics:', uniqueTopics); // Debugging line
 
             uniqueTopics.forEach(topic => {
                 const option = document.createElement('option');
@@ -75,8 +69,7 @@
             }
         }
 
-        async function initialize() {
-            const repos = await fetchRepos();
+        function initialize() {
             if (repos) {
                 const index = createIndex(repos);
                 populateTopicSelect(repos);
