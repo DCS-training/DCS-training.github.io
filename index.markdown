@@ -64,16 +64,22 @@
         function populateTopicSelect(repos) {
             const topicSelect = document.getElementById('topic-select');
             const uniqueTopics = new Set();
+            // Collect unique topics
             repos.forEach(repo => {
                 repo.topics.forEach(topic => uniqueTopics.add(topic));
             });
-            uniqueTopics.forEach(topic => {
-                const option = document.createElement('option');
-                option.value = topic;
-                option.textContent = topic;
-                topicSelect.appendChild(option);
+            // Convert Set to array and sort alphabetically
+            const sortedTopics = Array.from(uniqueTopics).sort();
+            // Clear previous options
+            topicSelect.innerHTML = '<option value="">-- Select a Topic --</option>';
+            // Add sorted topics to the dropdown
+            sortedTopics.forEach(topic => {
+               const option = document.createElement('option');
+               option.value = topic;
+               option.textContent = topic;
+               topicSelect.appendChild(option);
             });
-        }
+}
         function searchRepos(query, index, repos) {
             const results = index.search(`*${query}*`);
             const repoList = document.getElementById('repo-list');
@@ -94,22 +100,21 @@
             if (repos) {
                 const topicIndex = createIndex(repos, 'topics');
                 const nameIndex = createIndex(repos, 'name');
-                populateTopicSelect(repos);
+                populateTopicSelect(repos);  // Populate the dropdown with sorted topics
                 document.getElementById('search-topic-input').addEventListener('input', function () {
-                    const query = this.value;
-                    searchRepos(query, topicIndex, repos);
+                const query = this.value;
+                searchRepos(query, topicIndex, repos);
                 });
                 document.getElementById('topic-select').addEventListener('change', function () {
                     const query = this.value;
-                    searchRepos(query, topicIndex, repos);
-                });
-                document.getElementById('search-name-input').addEventListener('input', function () {
-                    const query = this.value;
-                    searchRepos(query, nameIndex, repos);
-                });
-            }
-        }
-        initialize();
+                     searchRepos(query, topicIndex, repos);
+                     });
+        document.getElementById('search-name-input').addEventListener('input', function () {
+            const query = this.value;
+            searchRepos(query, nameIndex, repos);
+        });
+    }
+}
     </script>
 </body>
 </html>
