@@ -13,9 +13,18 @@
     <ul id="repo-list"></ul>
 
     <script>
-        // Using Jekyll to inject the repos.json data
         const repos = {{ site.data.repos | jsonify }};
-        console.log('Fetched repositories:', repos); // Debugging line
+        console.log('Fetched repositories:', repos);
+
+        function createSubstrings(str) {
+            const substrings = [];
+            for (let i = 0; i < str.length; i++) {
+                for (let j = i + 1; j <= str.length; j++) {
+                    substrings.push(str.slice(i, j));
+                }
+            }
+            return substrings;
+        }
 
         function createIndex(repos) {
             return lunr(function () {
@@ -23,9 +32,10 @@
                 this.field('topics');
 
                 repos.forEach(repo => {
+                    const topicSubstrings = repo.topics.flatMap(topic => createSubstrings(topic));
                     this.add({
                         'name': repo.name,
-                        'topics': repo.topics.join(' '),
+                        'topics': topicSubstrings.join(' '),
                         'id': repo.name
                     });
                 });
@@ -40,8 +50,6 @@
                 repo.topics.forEach(topic => uniqueTopics.add(topic));
             });
 
-            console.log('Unique topics:', uniqueTopics); // Debugging line
-
             uniqueTopics.forEach(topic => {
                 const option = document.createElement('option');
                 option.value = topic;
@@ -51,7 +59,7 @@
         }
 
         function searchRepos(query, index, repos) {
-            const results = index.search(query);
+            const results = index.search(`*${query}*`);
             const repoList = document.getElementById('repo-list');
             repoList.innerHTML = '';
 
