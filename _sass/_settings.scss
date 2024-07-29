@@ -1,0 +1,38 @@
+// Background colours
+$backgroundColour: #ffffff !default;
+$codeBackgroundColour: #fafafa !default;
+$featureBackgroundColour: #f9fafa !default;
+$accentColour: #e7135d!default;
+
+// Text colours
+$headingColour: #041d40  !default;
+$bodyColour: #041d40  !default;
+$linkColour: #e7135d !default;
+$hoverColour: #e7135d !default;
+$focusColour: #e7135d !default;
+$captionColour: #a8adac !default;
+$white: #ffffff !default;
+
+// Typography
+$bodytype: (
+  font-family: "'Source Sans Pro', sans-serif",
+  regular: 400,
+  bold: 700,
+  italic: italic,
+  cap-height: 0.75
+) !default;
+
+$headingtype: (
+  font-family: "'Source Sans Pro', sans-serif",
+  regular: 400,
+  bold: 700,
+  cap-height: 0.75
+) !default;
+
+$monospacetype: (
+  font-family: "'Source Sans Pro', sans-serif",
+  regular: 400,
+  cap-height: 0.68
+) !default;
+
+// TIP: Load custom fonts in _config.yaml
