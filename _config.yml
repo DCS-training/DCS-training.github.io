@@ -67,7 +67,7 @@ collections:
     description: "My thoughts and ideas" # The post list page content
     feature_text: |
       Welcome to the blog
-    feature_image: "https://picsum.photos/2560/600?image=866"
+    feature_image: "/assets/default-social-image.png"
 
 # 6. Jekyll collections settings
 defaults:
@@ -97,7 +97,7 @@ title: "CDCS Training Material" # Site name or title, also used in jekyll-seo-ta
 description: "" # Site description and default description, also used in jekyll-seo-tag
 url: "https://dcs-training.github.io/" # Site url, also used in jekyll-seo-tag
 baseurl: ""
-repo: "https://github.com/daviddarnes/alembic"
+repo: "https://github.com/DCS-training/DCS-training.github.io"
 email: "cdcs@ed.ac.uk"
 # disqus: "alembic-1" # Blog post comments, uncomment the option and set the site ID from your Disqus account
 # date_format: "%-d %B %Y" # Blog post date formatting using placeholder formatting
