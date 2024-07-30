@@ -96,7 +96,7 @@ title: "CDCS Training Material" # Site name or title, also used in jekyll-seo-ta
 #logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
 description: "" # Site description and default description, also used in jekyll-seo-tag
 url: "https://dcs-training.github.io/" # Site url, also used in jekyll-seo-tag
-baseurl: ""
+baseurl: "https://dcs-training.github.io/"
 repo: "https://github.com/DCS-training/DCS-training.github.io"
 email: "cdcs@ed.ac.uk"
 # disqus: "alembic-1" # Blog post comments, uncomment the option and set the site ID from your Disqus account
