@@ -67,7 +67,7 @@ collections:
     description: "My thoughts and ideas" # The post list page content
     feature_text: |
       Welcome to the blog
-    feature_image: "/assets/default-social-image.png"
+    feature_image: "/assets/default-social-image2.png"
 
 # 6. Jekyll collections settings
 defaults:
@@ -75,7 +75,7 @@ defaults:
     scope:
       path: ""
     values:
-      image: "/assets/default-social-image.png" # Default image for sharing
+      image: "/assets/default-social-image2.png" # Default image for sharing
   -
     scope:
       path: ""
