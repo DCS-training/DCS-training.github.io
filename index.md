@@ -15,7 +15,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
 </head>
 <body>
     <h1>Our GitHub Repositories</h1>
-    <p>All the material that we have prepared for our Training Porgramme is hosted in our <a GitHub Repository src="https://github.com/DCS-training">. There are currently almost 80 repositories developped in the last 4 years. Each repository will contain a <strong>readme.md</strong> with instructions on their content and how to use them. You can search directly among the repositories using the Search tools at the bottom of this page. To facilitate self-learning we have also created a series of more self-contained tutorials that you can find below divided by topics.</p>
+    <p>All the material that we have prepared for our Training Porgramme is hosted in our <a GitHub Repository src="https://github.com/DCS-training"></a>. There are currently almost 80 repositories developped in the last 4 years. Each repository will contain a <strong>readme.md</strong> with instructions on their content and how to use them. You can search directly among the repositories using the Search tools at the bottom of this page. To facilitate self-learning we have also created a series of more self-contained tutorials that you can find below divided by topics.</p>
     <h2>Tutorial</h2>
         <div class="row">
         <div class="column">
@@ -41,7 +41,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <p>More to come soon</p>
         </div>
         <div class="column">
-        <h3>Geographical Data </h3>
+        <h3>Working with Geographical Data </h3>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Atlas%20Black%20and%20white.png" alt="Image 5">
         <p>More to come soon</p>
         </div>

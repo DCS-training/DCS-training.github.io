@@ -88,12 +88,19 @@ body {
 .column {
   width: 32%; // Adjust width to accommodate padding
   padding: 10px;
+  margin-bottom: 10px; /* Add vertical spacing between columns */
   //height: 300px; // Should be removed. Only for demonstration
   border: 1px solid #041d40 ; // Add black border
   background-color: transparent!important; // Ensure no background color
   box-sizing: border-box; // Include padding and border in width/height
 }
 
+.column img {
+  width: 100%;           // Make images responsive to the column width
+  height: 150px;        // Set a fixed height for uniformity
+  object-fit: cover;    // Ensure the image covers the area, cropping if necessary
+  display: block;       // Removes any bottom space in the image
+}
 // Clear floats after the columns (not needed with flexbox, but kept for legacy support)
 .row:after {
   content: "";
