@@ -94,6 +94,12 @@ body {
   background-color: transparent!important; // Ensure no background color
   box-sizing: border-box; // Include padding and border in width/height
 }
+.column h4 {
+  height: 3.6em;              // Adjust this value to set the height for 3 rows (3 * line-height)
+  line-height: 1.2em;         // Line height can be adjusted as needed
+  margin: 0;                  // Remove default margins
+  padding-bottom: 5px;        // Space between the title and the image
+}
 
 .column img {
   width: 100%;           // Make images responsive to the column width
