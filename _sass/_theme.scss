@@ -97,7 +97,7 @@ body {
 
 .column img {
   width: 100%;           // Make images responsive to the column width
-  height: 150px;        // Set a fixed height for uniformity
+  height: 180px;        // Set a fixed height for uniformity
   object-fit: cover;    // Ensure the image covers the area, cropping if necessary
   display: block;       // Removes any bottom space in the image
 }

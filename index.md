@@ -16,7 +16,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
 <body>
     <h1>Our GitHub Repositories</h1>
     <p>All the material that we have prepared for our Training Porgramme is hosted in our <a GitHub Repository src="https://github.com/DCS-training"></a>. There are currently almost 80 repositories developped in the last 4 years. Each repository will contain a <strong>readme.md</strong> with instructions on their content and how to use them. You can search directly among the repositories using the Search tools at the bottom of this page. To facilitate self-learning we have also created a series of more self-contained tutorials that you can find below divided by topics.</p>
-    <h2>Tutorial</h2>
+    <h2>Tutorials</h2>
         <div class="row">
         <div class="column">
         <h3>Good Practices of Digital Research</h3>
