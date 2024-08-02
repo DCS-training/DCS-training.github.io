@@ -12,24 +12,6 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
     <title>Repository Search</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    * {
-        box-sizing: border-box;
-        }
-    /* Create three equal columns that floats next to each other */
-  .column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
 </head>
 <body>
     <h1>Three Equal Columns</h1>

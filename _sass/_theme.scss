@@ -58,6 +58,49 @@ body {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
+// Structural elements
+body {
+  background: $backgroundColour;
+  color: $bodyColour;
+  height: 100%;
+  display: flex;
+  @include flex-direction(column);
+  overflow-x: hidden;
+}
+
+// Container styles
+.container {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+// Column layout
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; // Should be removed. Only for demonstration
+  border: 1px solid #041d40; // Add black border
+  background-color: transparent; // Ensure no background color
+}
+
+// Clear floats after the columns
+.row {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Other styles...
+
+
 .logo {
   display: inline-block;
   line-height: 0;
