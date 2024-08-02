@@ -105,6 +105,7 @@ body {
   width: 100%;           // Make images responsive to the column width
   height: 180px;        // Set a fixed height for uniformity
   object-fit: cover;    // Ensure the image covers the area, cropping if necessary
+  margin-top: 5px;  
   display: block;       // Removes any bottom space in the image
 }
 // Clear floats after the columns (not needed with flexbox, but kept for legacy support)
