@@ -32,7 +32,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
 </style>
 </head>
 <body>
-    <h1>Three Equal Columns</h2>
+    <h1>Three Equal Columns</h1>
 <div class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>Column 1</h2>
