@@ -14,28 +14,49 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <h1>Three Equal Columns</h1>
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Column 2</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#ccc;">
-    <h2>Column 3</h2>
-    <p>Some text..</p>
-  </div>
-</div>
-    <h1>Search GitHub Repositories</h1>
+    <h1>Our GitHub Repositories</h1>
+    <p>All the material that we have prepared for our Training Porgramme is hosted in our <a GitHub Repository src="https://github.com/DCS-training"></p>. There are currently almost 80 repositories developped in the last 4 years. Each repository will contain a <strong>readme.md</strong> with instructions on their content and how to use them. You can search directly among the repositories using the Search tools at the bottom of this page. To facilitate self-learning we have also created a series of more self-contained tutorials that you can find below divided by topics.
+    <h2>Tutorial</h2>
+        <div class="row">
+        <div class="column">
+        <h3>Good Practices of Digital Research</h3>
+        <img src="https://www.cdcs.ed.ac.uk/files/2023-10/Group%20in%20workshop.png" alt="Image 1">
+        <p>More to come soon</p>
+        </div>
+        <div class="column">
+        <h3>Intro to Programming</h3>
+        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/MicrosoftTeams-image%20%2810%29.png" alt="Image 2">
+        <p>More to come soon</p>
+        </div>
+        <div class="column">
+        <h3>Digitised Document & Text Analysis</h3>
+        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Recordings.png" alt="Image 3">
+        <p>More to come soon</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="column">
+        <h3>Data Wrangling & Data Visualisation</h3>
+        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/weaving%20black%20and%20white.png" alt="Image 4">
+        <p>More to come soon</p>
+        </div>
+        <div class="column">
+        <h3>Geographical Data </h3>
+        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Atlas%20Black%20and%20white.png" alt="Image 5">
+        <p>More to come soon</p>
+        </div>
+        <div class="column">
+        <h3>Structured Data Analysis</h3>
+        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Typewriter%20black%20and%20white.png" alt="Image 6">
+        <p>More to come soon</p>
+        </div>
+        </div>
+    <h2>Search GitHub Repositories</h2>
     <p>
     You can search the repositories either by topic or by title. 
-    Each repository will contain a <strong>readme.md</strong> with instructions on their content and how to use them.
     </p>
     <!-- Search by Topic -->
-    <h2>Search by Topic</h2>
+    <h3>Search by Topic</h3>
     <p>
     You can use the search functions below to filter the repositories based on the topics they cover.
     You can either type a topic or select one from the drop-down menu.
@@ -47,7 +68,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         </select>
     </div>
     <!-- Search by Name -->
-    <h2>Search by Name</h2>
+    <h3>Search by Name</h3>
     <p>
     Use the search function below to filter based on the repository name.
     </p>
