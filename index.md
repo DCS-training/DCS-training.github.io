@@ -19,34 +19,34 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
     <h2>Tutorials</h2>
         <div class="row">
         <div class="column">
-        <h3>Good Practices of Digital Research</h3>
+        <h4>Good Practices of Digital Research</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-10/Group%20in%20workshop.png" alt="Image 1">
         <p>More to come soon</p>
         </div>
         <div class="column">
-        <h3>Intro to Programming</h3>
+        <h4>Intro to Programming</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/MicrosoftTeams-image%20%2810%29.png" alt="Image 2">
         <p>More to come soon</p>
         </div>
         <div class="column">
-        <h3>Digitised Document & Text Analysis</h3>
+        <h4>Digitised Document & Text Analysis</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Recordings.png" alt="Image 3">
         <p>More to come soon</p>
         </div>
         </div>
         <div class="row">
         <div class="column">
-        <h3>Data Wrangling & Data Visualisation</h3>
+        <h4>Data Wrangling & Data Visualisation</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/weaving%20black%20and%20white.png" alt="Image 4">
         <p>More to come soon</p>
         </div>
         <div class="column">
-        <h3>Working with Geographical Data </h3>
+        <h4>Working with Geographical Data </h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Atlas%20Black%20and%20white.png" alt="Image 5">
         <p>More to come soon</p>
         </div>
         <div class="column">
-        <h3>Structured Data Analysis</h3>
+        <h4>Structured Data Analysis</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Typewriter%20black%20and%20white.png" alt="Image 6">
         <p>More to come soon</p>
         </div>
