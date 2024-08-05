@@ -15,13 +15,16 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
 </head>
 <body>
     <h1>Our GitHub Repositories</h1>
-    <p>All the material that we have prepared for our Training Porgramme is hosted in our <a GitHub Repository src="https://github.com/DCS-training"></a>. There are currently almost 80 repositories developped in the last 4 years. Each repository will contain a <strong>readme.md</strong> with instructions on their content and how to use them. You can search directly among the repositories using the Search tools at the bottom of this page. To facilitate self-learning we have also created a series of more self-contained tutorials that you can find below divided by topics.</p>
+    <p>All the material that we have prepared for our Training Porgramme is hosted in our <a href="https://github.com/DCS-training">GitHub Repository</a>. There are currently almost 80 repositories developped in the last 4 years. Each repository will contain a <strong>readme.md</strong> with instructions on their content and how to use them. You can search directly among the repositories using the Search tools at the bottom of this page. To facilitate self-learning we have also created a series of more self-contained tutorials that you can find below divided by topics.</p>
     <h2>Tutorials</h2>
         <div class="row">
         <div class="column">
         <h4>Good Practices of Digital Research</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-10/Group%20in%20workshop.png" alt="Image 1">
-        <p>More to come soon</p>
+        <ul>
+           <li><a href="https://htmlpreview.github.io/?https://github.com/DCS-training/From-SPSS-to-R-How-to-Make-Your-Statistical-Analysis-Reproducible/blob/main/SPSS_to_R_Full_Tutotial.html">From SPSS to R. How to Make your Statistical Analysis Reproducible</a></li>
+           <li>More to Come Soon</li>
+        </ul>
         </div>
         <div class="column">
         <h4>Intro to Programming</h4>
