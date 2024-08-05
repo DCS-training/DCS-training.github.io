@@ -29,29 +29,39 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <div class="column">
         <h4>Intro to Programming</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/MicrosoftTeams-image%20%2810%29.png" alt="Image 2">
-        <p>More to come soon</p>
+        <ul>
+           <li>More to Come Soon</li>
+        </ul>
         </div>
         <div class="column">
         <h4>Digitised Document & Text Analysis</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Recordings.png" alt="Image 3">
-        <p>More to come soon</p>
+         <ul>
+           <li>More to Come Soon</li>
+        </ul>
         </div>
         </div>
         <div class="row">
         <div class="column">
         <h4>Data Wrangling & Data Visualisation</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/weaving%20black%20and%20white.png" alt="Image 4">
-        <p>More to come soon</p>
+         <ul>
+           <li>More to Come Soon</li>
+        </ul>
         </div>
         <div class="column">
         <h4>Geographical Data & Digital Drawing </h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Atlas%20Black%20and%20white.png" alt="Image 5">
-        <p>More to come soon</p>
+         <ul>
+           <li>More to Come Soon</li>
+        </ul>
         </div>
         <div class="column">
         <h4>Structured Data Analysis</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Typewriter%20black%20and%20white.png" alt="Image 6">
-        <p>More to come soon</p>
+         <ul>
+           <li>More to Come Soon</li>
+        </ul>
         </div>
         </div>
     <h2>Search GitHub Repositories</h2>
