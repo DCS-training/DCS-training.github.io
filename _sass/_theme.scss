@@ -108,22 +108,30 @@ body {
   margin-top: 5px;  
   display: block;       // Removes any bottom space in the image
 }
+// Specific styles for ul and li within .column
+.column ul {
+  list-style-type: none;  // Remove default bullets
+  padding-left: 0;        // Remove default padding
+}
+
+.column ul li {
+  padding-left: 20px;     // Add padding to the left for indentation
+  position: relative;     // Position relative for pseudo-element
+}
+
+.column ul li:before {
+  content: '•';           // Add a bullet symbol
+  position: absolute;     // Position absolutely
+  left: 0;                // Align bullet to the left
+  color: #041d40;         // Bullet color
+}
+
 // Clear floats after the columns (not needed with flexbox, but kept for legacy support)
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-
-// List styles
-ul.custom-indent {
-  padding-left: 10px; // Adjust this value to set the indent
-}
-
-ul.custom-indent li {
-  margin-left: 10px; // Adjust this value if needed
-}
-
 // Other styles...
 
 // Other styles...
