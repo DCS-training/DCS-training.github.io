@@ -115,6 +115,15 @@ body {
   clear: both;
 }
 
+// List styles
+ul.custom-indent {
+  padding-left: 10px; // Adjust this value to set the indent
+}
+
+ul.custom-indent li {
+  margin-left: 10px; // Adjust this value if needed
+}
+
 // Other styles...
 
 // Other styles...
