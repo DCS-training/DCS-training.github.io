@@ -22,7 +22,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <h4>Good Practices of Digital Research</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-10/Group%20in%20workshop.png" alt="Image 1">
         <ul>
-           <li><a href="/_posts/SPSS_to_R_Full_Tutotial.html">From SPSS to R. How to Make your Statistical Analysis Reproducible</a></li>
+           <li><a href="_posts/SPSSTutorial.html">From SPSS to R. How to Make your Statistical Analysis Reproducible</a></li>
            <li>More to Come Soon</li>
         </ul>
         </div>
