@@ -41,7 +41,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <p>More to come soon</p>
         </div>
         <div class="column">
-        <h4>Working with Geographical Data </h4>
+        <h4>Geographical Data & Digital Drawing </h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Atlas%20Black%20and%20white.png" alt="Image 5">
         <p>More to come soon</p>
         </div>
