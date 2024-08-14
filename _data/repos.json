@@ -13,8 +13,7 @@
     "name": "Digital-Method-of-the-Month",
     "url": "https://github.com/DCS-training/Digital-Method-of-the-Month",
     "topics": [
-      "3d-printing",
-      "3d-scanning",
+      "3d-data",
       "data-analysis",
       "data-visualisation",
       "data-wrangling",
@@ -235,7 +234,7 @@
     "name": "VisualisingDataInQGIS",
     "url": "https://github.com/DCS-training/VisualisingDataInQGIS",
     "topics": [
-      "3d-visualisation",
+      "3d-data",
       "data-visualisation",
       "geographical-data",
       "gis",
@@ -784,16 +783,16 @@
     "topics": []
   },
   {
-    "name": "testwebiste",
-    "url": "https://github.com/DCS-training/testwebiste",
-    "topics": []
-  },
-  {
     "name": "AutocadSelfLearn",
     "url": "https://github.com/DCS-training/AutocadSelfLearn",
     "topics": [
       "autocad",
       "digital-drawing"
     ]
+  },
+  {
+    "name": "SPSS-to-R-Full-Tutorial",
+    "url": "https://github.com/DCS-training/SPSS-to-R-Full-Tutorial",
+    "topics": []
   }
 ]
