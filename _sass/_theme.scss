@@ -58,7 +58,7 @@ body {
     @include justify-content(center);
 
     h2, p {
-      background-color: red; /* Adds a solid red background to the text */
+      background-color:#ebebeb; /* Adds a solid red background to the text */
       padding: 1em 4em; /* 2em vertical padding, 4em horizontal padding */
       border-radius: 5px; /* Optional: Adds rounded corners to the background */
       display: inline-block; /* Ensures the background only covers the text content */
