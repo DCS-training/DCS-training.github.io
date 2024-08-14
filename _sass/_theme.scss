@@ -55,6 +55,12 @@ body {
     max-width: 60%;
     @include flex-direction(column);
     @include justify-content(center);
+  .feature_text {
+    background-color: red; /* Sets the background color to red */
+    padding: 3em; /* Adds 3em padding around the text */
+    border-radius: 5px; /* Optional: adds rounded corners to the text background */
+    }
+
   }
 }
 
