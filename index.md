@@ -3,7 +3,7 @@ title:
 feature_text: |
   ## CDCS Training Material
   "Collaboration and community are at the heart of what we do"
-feature_image: "https://www.cdcs.ed.ac.uk/files/2024-07/BannerImage_4.png"
+feature_image: "https://www.cdcs.ed.ac.uk/files/2024-08/BannerImage.png"
 excerpt: "This page is set up to facilitate the use of the CDCS repositories."
 ---
 <html>
