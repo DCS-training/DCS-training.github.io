@@ -480,8 +480,8 @@
     ]
   },
   {
-    "name": "version-control-2023",
-    "url": "https://github.com/DCS-training/version-control-2023",
+    "name": "version-control-2024",
+    "url": "https://github.com/DCS-training/version-control-2024",
     "topics": [
       "git",
       "good-practices-digital-research",
@@ -536,8 +536,8 @@
     ]
   },
   {
-    "name": "IntroToStatistics_2023",
-    "url": "https://github.com/DCS-training/IntroToStatistics_2023",
+    "name": "IntroToStatistics",
+    "url": "https://github.com/DCS-training/IntroToStatistics",
     "topics": [
       "data-analysis",
       "r",
@@ -555,8 +555,8 @@
     ]
   },
   {
-    "name": "nltk-intro-2024",
-    "url": "https://github.com/DCS-training/nltk-intro-2024",
+    "name": "nltk-intro-2025",
+    "url": "https://github.com/DCS-training/nltk-intro-2025",
     "topics": [
       "python",
       "text-analysis"
@@ -650,8 +650,8 @@
     ]
   },
   {
-    "name": "machine_learning_python",
-    "url": "https://github.com/DCS-training/machine_learning_python",
+    "name": "intromachinelearning",
+    "url": "https://github.com/DCS-training/intromachinelearning",
     "topics": [
       "data-analysis",
       "data-wrangling",
@@ -804,6 +804,51 @@
   {
     "name": "2024-11-18-CDCS-Carpentry-Social-Sciences",
     "url": "https://github.com/DCS-training/2024-11-18-CDCS-Carpentry-Social-Sciences",
+    "topics": []
+  },
+  {
+    "name": "EFIDeepDive",
+    "url": "https://github.com/DCS-training/EFIDeepDive",
+    "topics": []
+  },
+  {
+    "name": "legal-ethical-issues-webscraping",
+    "url": "https://github.com/DCS-training/legal-ethical-issues-webscraping",
+    "topics": []
+  },
+  {
+    "name": "web-scraping-R-2024",
+    "url": "https://github.com/DCS-training/web-scraping-R-2024",
+    "topics": []
+  },
+  {
+    "name": "IntroToQGIS_2024",
+    "url": "https://github.com/DCS-training/IntroToQGIS_2024",
+    "topics": []
+  },
+  {
+    "name": "hansard_data",
+    "url": "https://github.com/DCS-training/hansard_data",
+    "topics": []
+  },
+  {
+    "name": "A-Pipeline-for-Data-Wrangling-and-Manipulation-with-R",
+    "url": "https://github.com/DCS-training/A-Pipeline-for-Data-Wrangling-and-Manipulation-with-R",
+    "topics": []
+  },
+  {
+    "name": "data-analysis-in-python",
+    "url": "https://github.com/DCS-training/data-analysis-in-python",
+    "topics": []
+  },
+  {
+    "name": "PolarisationWithR",
+    "url": "https://github.com/DCS-training/PolarisationWithR",
+    "topics": []
+  },
+  {
+    "name": "Processing-Geographical-Data-in-QGIS",
+    "url": "https://github.com/DCS-training/Processing-Geographical-Data-in-QGIS",
     "topics": []
   }
 ]
