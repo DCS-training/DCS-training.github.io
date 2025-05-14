@@ -22,6 +22,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <img src="https://www.cdcs.ed.ac.uk/files/2023-10/Group%20in%20workshop.png" alt="Image 1">
         <ul>
            <li><a href="Tutorials/SPSSTutorial.html">From SPSS to R. How to Make your Statistical Analysis Reproducible</a></li>
+           <li><a href="Tutorials/ShinyApps.html">Share your research Results. Building interactive web applications in R using SHINY</a></li>
            <li>More to Come Soon</li>
         </ul>
         </div>
