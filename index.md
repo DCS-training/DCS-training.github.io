@@ -91,8 +91,8 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
     <ul id="repo-list"></ul>
     <h1> Contacts </h1>
     <p>
-     {% include button.html text="Email Us" link="mailto:CDCS@ed.ac.uk" color="#f68140" %} 
-     {% include button.html text="On Twitter" link="https://twitter.com/EdCDCS" color="#0d94e7" %} 
+     {% include button.html text="Email Us" link="mailto:CDCS@ed.ac.uk" color="#fd0e67" %} 
+     {% include button.html text="On BlueSky" link="https://bsky.app/profile/edcdcs.bsky.social" color="#002e5f" %} 
     </p>
     <script>
     const repos = {{ site.data.repos | jsonify }};
