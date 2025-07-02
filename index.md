@@ -23,7 +23,6 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <ul>
            <li><a href="Tutorials/SPSSTutorial.html">From SPSS to R. How to Make your Statistical Analysis Reproducible</a></li>
            <li><a href="Tutorials/ShinyApps.html">Share your research Results. Building interactive web applications in R using SHINY</a></li>
-           <li><a href="https://raw.githubusercontent.com/DCS-training/Digital-Method-of-the-Month/refs/heads/main/DMM%20Docs/3DPrinting.md">TryMD</a></li>
            <li>More to Come Soon</li>
         </ul>
         </div>
