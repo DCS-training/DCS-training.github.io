@@ -37,8 +37,6 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <h4>Digitised Document & Text Analysis</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Recordings.png" alt="Image 3">
          <ul>
-           <li><a href="Tutorials/MappingAFamilyNetwork.html" target="_blank">Mapping a Family Network with Gephi</li>
-           <li><a href="Tutorials/DecipheringAFinancialNetwork.html" target="_blank">Deciphering a Financial Network with Gephi</li>
         </ul>
         </div>
         </div>
