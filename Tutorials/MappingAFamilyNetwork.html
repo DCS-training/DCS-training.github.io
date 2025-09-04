@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapping a Family Network with Gephi</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="mapping-a-family-network">Mapping a Family Network with Gephi</h1>
+<p>Author: <strong>Brian Tsz Ho WONG</strong> (<a href="mailto:t.h.wong-2@sms.ed.ac.uk" target="_blank">t.h.wong-2@sms.ed.ac.uk</a>)</p>
+<p>This tutorial uses the Ho Tung family in early 20th-century Hong Kong to explain <strong>what Gephi is</strong> and how to <strong>interpret a Gephi network</strong>. No prior knowledge of Gephi is required, and no coding will be involved.</p>
+<p>Completing this tutorial will enable you to:</p>
+<ul>
+<li>Understand <strong>the basic uses of Gephi</strong></li>
+<li><strong>Analyse Gephi networks</strong> (centrality and network level)</li>
+</ul>
+<h2 id="things-to-do-first">Things to Do First</h2>
+<p>Download <a href="https://gephi.org/users/download/" target="_blank">Gephi 0.10.1</a> to your own device. You can choose to download the Windows or Mac version.</p>
+<p>You will also need a <strong>computer mouse</strong> to navigate Gephi graphs.</p>
+<h2 id="the-ho-tung-family">The Ho Tung Family</h2>
+<p><strong>Sir Robert Ho Tung</strong> (1862-1956) and <strong>Ho Fook</strong> (1863-1926) are brothers, and <strong>Ho Kom-Tong</strong> (1866-1950) is their half-brother. Robert and Ho Fook are Eurasian (their father is Dutch and their mother is Chinese), while Ho Kom-Tong is Chinese. The Ho brothers were prominent figures in pre-WWII Hong Kong. <strong>Their families were known as the Ho Tung family</strong>.</p>
+<p>In the late 19th century, as British companies expanded their businesses in Hong Kong, they needed someone who could speak both Chinese and English to act as their intermediary with the locals; this person was known as a compradore (<em>maiban</em>). After graduating from Queen’s College, the Ho brothers became compradores for British companies such as Jardine Matheson and the Hong Kong and Kowloon Wharf and Godown Company. They were later appointed by the colonial government as legislative councillors. They also <strong>established maternal links with other Eurasian families in Hong Kong</strong>, such as the Lo’s, the Zimmern’s, and the Wong Kam-fuk’s.</p>
+<p>This tutorial uses the <strong>Ho Tung Family</strong> as an example to show <strong>Gephi’s applications in analysing historical social networks</strong>.</p>
+<h2 id="gephi-datasets">Gephi Datasets</h2>
+<p>In the <a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/HoTungFamily_Gephi.xlsx" target="_blank">‘HoTungFamily.xlsx’</a> file, there are two spreadsheets: <strong>‘Nodes’</strong> and <strong>‘Edges’</strong>:</p>
+<ul>
+<li>The <strong>‘Nodes’</strong> spreadsheet, also known as the <em>nodes table</em>, acts as an <strong>index</strong> of the network. It lists <strong>all the entities and their IDs</strong>.</li>
+<li>In the network, <strong>‘edges’</strong> are the <strong>lines that link entities</strong>, so the <strong>‘Edges’</strong> spreadsheet (also known as the <em>edges table</em>) contains information about the <strong>relationships between entities</strong> in the network.</li>
+</ul>
+<p>The <strong>‘Edges’</strong> spreadsheet has four columns: <strong>‘Source’</strong>, <strong>‘Target’</strong>, <strong>‘Weight’</strong>, and <strong>‘Type’</strong>:</p>
+<ul>
+<li>The numbers in the <strong>‘Source’</strong> and <strong>‘Target’</strong> columns represent the IDs of the entities with a relationship</li>
+<li>We need to <strong>assign a weight</strong> to each type of relationship, but there are <strong>no rules or standards</strong> for how to do this. This is entirely up to you and your research topic.</li>
+</ul>
+<blockquote>
+<p>In this case, for example, we are researching the networks of the Ho family. The relationship between brothers is likely to be closer and more intimate than that between half-brothers. Therefore, the weight for a relationship between brothers will be 1, while the weight for a relationship between half-brothers will be 0.5.</p>
+</blockquote>
+<p>There are <strong>two types of edge in Gephi</strong>: <strong>directed</strong> and <strong>undirected</strong></p>
+<ul>
+<li>A <strong>directed edge</strong> shows a <strong>one-way relationship</strong> between two entities:</li>
+</ul>
+<blockquote>
+<p>For example, in a citation network, paper A is cited by paper B. Or in an ownership network, company A is invested in or owns shares in company B.</p>
+</blockquote>
+<ul>
+<li>An <strong>undirected edge</strong>, on the contrary, shows a <strong>unidirectional relationship</strong> between two entities:</li>
+</ul>
+<blockquote>
+<p>In our case, Robert Ho is the brother of Ho Fook, while Ho Fook is also a brother of Robert.</p>
+</blockquote>
+<p>Now we can analyse the dataset in Gephi.</p>
+<h2 id="analyse-a-network-in-gephi">Analyse a Network in Gephi</h2>
+<h3 id="importing-a-dataset-into-gephi">Importing a Dataset into Gephi</h3>
+<ol>
+<li>Open Gephi. <strong>Do not open the <a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/HoTungFamily_Gephi.xlsx" target="_blank">‘HoTungFamily_Gephi.xlsx’</a> in Excel. If you have opened it, close it before opening Gephi</strong>.</li>
+<li>Click on ‘New Project’ and then go to ‘Data Laboratory’.</li>
+<li>Click on ‘Import Spreadsheet’, then select the <a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/HoTungFamily_Gephi.xlsx" target="_blank">‘HoTungFamily_Gephi.xlsx’</a> and press ‘open’</li>
+<li>Import the ‘Nodes table’, then go to ‘Import spreadsheet’ and import the ‘Edges table’</li>
+<li>Select <strong>‘BigDecimal’</strong> for the ‘Weight’ column.</li>
+<li>Select <strong>‘Undirected’</strong> for the ‘Graph type’</li>
+<li>Select <strong>‘Append to existing workplace’</strong></li>
+<li>Go to ‘Overview’ and select ‘Yifan Hu’ for the layout. Click Run</li>
+</ol>
+<h3 id="measuring-and-visualising-the-networks"><strong>Measuring and Visualising the Networks</strong></h3>
+<ol>
+<li>Go to ‘Statistics’.</li>
+<li>Run <strong>‘Average degree’,</strong> <strong>‘Avg. Weighted Degree’</strong>, <strong>‘Network Diameter’</strong>, <strong>‘Modularity’</strong>, and <strong>‘Eigenvector Centrality’</strong></li>
+<li>Go to ‘Data Laboratory’, and you will find statistics for several types of centrality measures, including <strong>degree</strong> (centrality), <strong>weighted degree</strong>, <strong>betweenness centrality</strong>, and <strong>eigenvector centrality</strong></li>
+<li>Go back to ‘Overview’ then go to ‘Appearance’.</li>
+<li>Select ‘Node’, click the ‘Colour’ button, then select ‘Modularity Class’ under ‘Partition’</li>
+<li>Click on ‘Apply’</li>
+</ol>
+<p>You will then notice that the network is made up of <strong>three main clusters</strong>, which are clearly the families of Robert Ho, Ho Fook and Ho Kom-Tong, respectively.</p>
+<p>To show the name of the entities in the network:</p>
+<ol>
+<li>Click on the ‘Attributes’ button and select ‘EngName’.</li>
+<li>Click on the bold ‘T’ next to the ‘Attributes’ button to make the names of the entities pop up</li>
+</ol>
+<p>You can export the visualisation as a graph file or take a screenshot using the ‘Take screenshot’ button. <strong>Remember to adjust the width and height in the ‘Screenshot settings’ menu to improve the picture’s resolution</strong></p>
+<h3 id="interpreting-the-networks"><strong>Interpreting the networks</strong></h3>
+<p>Here are brief definitions of some commonly used centrality measures. However, we should always be careful that the analysis is <strong>done in a historical context or against the background of other disciplines</strong>:</p>
+<ul>
+<li><strong>Degree centrality</strong>: number of edges linked to each node (popularity, well connected)</li>
+<li><strong>Weighted degree centrality</strong>: Number of edges connected to each node, taking into account the weight of the edges (popularity, well connected)</li>
+<li><strong>Betweenness centrality</strong>: the number of times a node is on the shortest path between other nodes (bridges, gatekeepers)</li>
+<li><strong>Eigenvector centrality</strong>: similar to degree centrality, but takes into account the centrality of the nodes it‘s connected to</li>
+<li><strong>Modularity Class</strong>: Community detection</li>
+</ul>
+<blockquote>
+<p>In this case, the three nodes with the highest betweenness centrality are Robert Ho, Ho Fook, and Ho Kom-Tong. This means that many of the other nodes have to pass through them in order to communicate with each other. The node with the fourth highest betweenness centrality is Ho Sai-wing, who is the son of Ho Fook and was later adopted by Robert Ho. Therefore, he is in a close relationship with Robert Ho and Ho Fook, as well as their descendants.</p>
+</blockquote>
+<h2 id="next-step">Next Step</h2>
+<p>If you are interested in using Gephi for your research, you can complete another CDCS tutorial, <strong>‘Deciphering a Financial Network’,</strong> to learn how to <strong>prepare a Gephi dataset using Microsoft Excel and OpenRefine</strong>. The tutorial will also introduce you to the <strong>uses of Gephi beyond social network analysis</strong> and show you how to <strong>turn real-life financial data into a Gephi dataset</strong>.</p>
+<h2 id="credits">Credits</h2>
+<p><strong>About the author</strong><br>
+Brian Tsz Ho Wong is a <a href="https://edwebprofiles.ed.ac.uk/profile/tsz-ho-wong" target="_blank">PhD student at the University of Edinburgh</a>. 
+His thesis examines the economic and financial mobilisation of the Japanese Empire during WWII. 
+Nascent findings have recently been <a href="https://doi.org/10.1017/S0968565025100073" target="_blank">published in the <em>Financial History Review</em></a>. Outside of his PhD project, he is a Training Fellow at the University of Edinburgh’s Centre for Data, Culture and Society, where he has delivered courses on applying network analysis to humanities research. He is also a regular contributor to the <a href="https://digitalorientalist.com/" target="_blank"><em>Digital Orientalist</em></a> and is a member of the <a href="https://cwar-institute.org/" target="_blank">Cold War Archival Research Institute</a>.</p>
+<p><strong>Suggested citation</strong>: Tsz Ho Wong, “Mapping a Family Network with Gephi,” CDCS Tutorials, 2025</p>
+<p>This resource’s data was extracted from:<br>
+Ho, Eric Peter. <em>Tracing My Children’s Lineage</em>. Hong Kong: The University of Hong Kong, 2010.</p>
+<p>This resource is covered by a CC-BY-NC 4.0 license</p>
+<p>Please help us keeping our tutorials up to date. If you find something that is not working email us at <a href="mailto:cdcs@ed.ac.uk" target="_blank">cdcs@ed.ac.uk</a></p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deciphering a Financial Network with Gephi</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="deciphering-a-financial-network">Deciphering a Financial Network with Gephi</h1>
+<p>Author: <strong>Brian Tsz Ho WONG</strong> (<a href="mailto:t.h.wong-2@sms.ed.ac.uk" target="_blank">t.h.wong-2@sms.ed.ac.uk</a>)</p>
+<p>This tutorial uses the <a href="https://webb-site.com/articles/enigma.asp" target="_blank">‘Enigma Network’</a> in  contemporary Hong Kong to explain how to <strong>prepare a Gephi dataset in Microsoft Excel and OpenRefine</strong>, and how to <strong>interpret a Gephi network</strong>.</p>
+<p>If you are new to Gephi, it is recommended that you complete another CDCS tutorial, <strong>‘Mapping a Family Network’</strong>, first.</p>
+<p>Completing this tutorial will enable you to:</p>
+<ul>
+<li>Understand <strong>the uses of Gephi beyond social network analysis</strong></li>
+<li>Design your <strong>own Gephi dataset</strong> in Excel and OpenRefine using real-life data</li>
+<li><strong>Analyse Gephi networks</strong> (centrality and network level)</li>
+</ul>
+<h2 id="things-to-do-first">Things to Do First</h2>
+<p>Download <a href="https://gephi.org/users/download/" target="_blank">Gephi 0.10.1</a> and <a href="https://openrefine.org/download" target="_blank">OpenRefine</a>  to your own device. You can choose to download the Windows or Mac version.</p>
+<p>You will also need a <strong>computer mouse</strong> to navigate Gephi graphs.</p>
+<h2 id="what-is-enigma-network">What is ‘Enigma Network’?</h2>
+<p>On 17 May 2017, <a href="https://en.wikipedia.org/wiki/David_Webb_(Hong_Kong_activist)" target="_blank"><strong>David Webb</strong></a> , a retired investment banker and activist investor, published an article on his <a href="https://webb-site.com/" target="_blank">website</a>. The article, entitled <a href="https://webb-site.com/articles/enigma.asp" target="_blank"><strong>"The Enigma Network: 50 stocks not to own"</strong></a>. Webb argued that investors should not invest in 50 HK-listed companies, which he said had cross-owned each other’s shares. This allowed the ‘big bosses’ behind the ‘Enigma Network’ to easily manipulate the prices of these stocks, and ultimately damage investors’ interests. Webb’s article had shocked the market, and the Securities and Futures Commission began to investigate Webb’s allegations. As a result, several executives of the companies in Webb’s networks were arrested and prosecuted, although most were eventually acquitted.</p>
+<p>Webb’s website provided comprehensive data on the ‘Enigma Network’, especially the daily holdings data from the <a href="https://webb-site.com/articles/CCASSanalysis.asp" target="_blank">Central Clearing and Automated Settlement System (CCASS)</a>. This tutorial utilises the <strong>CCASS data from 16 May 2017</strong>, the day before Webb’s article was published, to <strong>reconstruct the ‘Enigma Network’</strong> and to <strong>demonstrate Gephi’s ability to analyse real-life financial data</strong>.</p>
+<h2 id="prepare-a-gephi-dataset">Prepare a Gephi Dataset</h2>
+<h3 id="extracting-ccass-data-from-webb-site">Extracting CCASS Data from Webb-Site</h3>
+<p>In his article on the <a href="https://webb-site.com/articles/enigma.asp" target="_blank">‘Enigma Network’</a>, Webb provides links to data on the 50 companies in the network:</p>
+<ol>
+<li>Click on a company hyperlink</li>
+<li>Go to ‘Key Data’</li>
+<li>Click on the ‘CCASS’ button on the page</li>
+<li>Select <strong>16 May 2017</strong> from the date picker</li>
+<li>Copy the CCASS data table to Excel. Only include shareholders who own <strong>more than 0.01 per cent</strong> of that company’s shares</li>
+<li>Do the same for all 50 companies in the ‘Enigma Network’</li>
+</ol>
+<h3 id="cleaning-ccass-data-in-openrefine">Cleaning CCASS Data in OpenRefine</h3>
+<ol>
+<li>Download ‘Enigma Network_CCASS Records.xlsx’</li>
+<li>Open OpenRefine, upload <a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/Enigma%20Network_CCASS%20Records.xlsx" target="_blank">‘Enigma Network_CCASS Records.xlsx’</a>, and then click ‘Next’</li>
+<li>Uncheck the box next to ‘Parse next’, check the box next to ‘Ignore first’, then enter <strong>‘3’</strong> between ‘Ignore first’ and ‘line(s) at beginning of file’</li>
+<li>Click on ‘Create projects’</li>
+<li>Click on the button next to ‘All’, select ‘Edit columns’, and then choose ‘Re-order/ remove columns’</li>
+<li>Remove <strong>columns 1, 2, 4, 5 and 7</strong>. Move <strong>column 8</strong> to be before column 6. Then click ‘OK’</li>
+<li>Click on the button next to ‘All’, select ‘Edit all columns’, and then click ‘To titlecase’. Only select columns 3 and 8</li>
+<li>Export it as an <strong>.xlsx</strong> file</li>
+</ol>
+<h3 id="preparing-a-gephi-dataset-in-excel">Preparing a Gephi Dataset in Excel</h3>
+<ol>
+<li>Open the file exported from OpenRefine in Excel (<em>refer to the <strong>‘OpenRefine Results’</strong> spreadsheet in the '<a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/Enigma%20Network_Gephi%20Dataset%20Guide.xlsx" target="_blank">Enigma Network_Gephi Dataset Guide.xlsx’</a></em>)</li>
+<li>Copy all the entitles in column 3 to a new spreadsheet, then remove the duplicates</li>
+<li>Do the same for column 8</li>
+<li>Copy the filtered list of column 8 entities under that of column 3, and then remove the duplicates</li>
+<li>Add one row to the left and one to the top of the filtered entities. Assign <strong>an ID</strong> to each entity. Rename the spreadsheet <strong>‘Nodes’</strong> (nodes table) (<em>refer to the '<strong>Nodes’</strong> spreadsheet in the '<a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/Enigma%20Network_Gephi%20Dataset%20Guide.xlsx" target="_blank">Enigma Network_Gephi Dataset Guide.xlsx’</a></em>)</li>
+<li>Go back to the first spreadsheet. Add a column next to columns 3 and 8, then copy the ‘nodes table’ to this spreadsheet. (<em>refer to the <strong>‘xlookup’</strong> spreadsheet in the '<a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/Enigma%20Network_Gephi%20Dataset%20Guide.xlsx" target="_blank">Enigma Network_Gephi Dataset Guide.xlsx’</a></em>)</li>
+<li>Use the <a href="https://support.microsoft.com/en-gb/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929" target="_blank"><strong>‘xlookup’</strong></a> function to match the entities to their IDs.</li>
+<li>Open a new spreadsheet. Copy the IDs of the entities from <strong>column 3</strong> to the first column. Rename this column <strong>‘Source’</strong>.</li>
+<li>Copy the IDs of the entities from <strong>column 8</strong> to the second column. Rename this column <strong>‘Target’</strong>. In this case, the entities in column 3 are the shareholders of the companies in the ‘Enigma Network’. The entities in column 8 represent the 50 companies in the network.</li>
+<li>Copy <strong>column 6</strong> to the third column. Rename this column <strong>‘Weight’</strong>. These numbers represent the percentage of shares held by the shareholders.  A higher percentage would give an edge more weight.</li>
+<li>Rename the spreadsheet to ‘Edges’ (edges table) (<em>refer to the '<strong>Edges’</strong> spreadsheet in the '<a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/Enigma%20Network_Gephi%20Dataset%20Guide.xlsx" target="_blank">Enigma Network_Gephi Dataset Guide.xlsx’</a></em>)</li>
+<li>Copy the ‘Nodes’ and ‘Edges’ to a new Excel file and remame it ‘Enigma Network_Gephi’.</li>
+</ol>
+<blockquote>
+<p>Can we use <strong>generative AI</strong> to create a Gephi dataset?<br>
+<strong>Yes, to some extent</strong>:</p>
+<ul>
+<li>I tried several generative AIs: ChatGPT-5, Claude Sonnet 4, Gemini 2.5 Pro and Grok 4. Grok could only <a href="https://grok.com/s/c2hhcmQtMw%3D%3D_fc067cb7-34ee-4fd2-b0e0-f76dbaea7ae3" target="_blank">identify fewer than 200 nodes (out of 490)</a>. Claude and Gemini failed to generate the nodes and edges table for Gephi, which is probably due to the complexity and volume of the data.</li>
+<li><strong>ChatGPT-5 Thinking</strong> produced the best results. After <a href="https://chatgpt.com/share/68b8db7e-e034-800d-becc-ddebc4355a49" target="_blank">receiving several prompts</a>,  it successfully transformed <a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/Enigma%20Network_CCASS%20Records.xlsx" target="_blank">‘Enigma Network_CCASS Records.xlsx’</a> into a Gephi dataset. While the dataset created by ChatGPT correctly identified all the nodes, it swapped the values in the ‘Source’ and ‘Target’ columns. This can easily be resolved.</li>
+<li>In short, <strong>generative AI can accelerate the process of preparing a Gephi dataset, but the results may vary</strong>. Users should therefore understand the logic and structure of a Gephi dataset before using AI to generate one.</li>
+</ul>
+</blockquote>
+<h2 id="visualise-and-analyse-the-enigma-network-in-gephi">Visualise and Analyse the ‘Enigma Network’ in Gephi</h2>
+<ol>
+<li>Download the <a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/Enigma%20Network_Gephi.xlsx" target="_blank">‘Enigma Network_Gephi.xlsx’</a> and open Gephi.
+   <strong>Do not open the spreadsheets in Excel, if you have opened them, close them before opening Gephi</strong></li>
+<li>Click on ‘New Project’ and then go to ‘Data Laboratory’</li>
+<li>Click on ‘Import Spreadsheet’, select ‘Enigma Network_Gephi.xlsx’ and press ‘open’.</li>
+<li>Import ‘Nodes’. Select <strong>‘Directed’</strong> for ‘Graph Type’</li>
+<li>Go to ‘Import spreadsheet’ and import ‘Edges’</li>
+<li>Select <strong>‘BigDecimal’</strong> for the ‘Weight’ column, and then choose <strong>‘Append to existing workplace’</strong></li>
+<li>Go to ‘Overview’ and select ‘Force Atlas’ for the layout. Then reset the ‘Repulsion strength’ to <strong>'10000’</strong></li>
+<li>Click ‘Run’</li>
+</ol>
+<h3 id="measuring-the-network">Measuring the Network</h3>
+<ol>
+<li>Go to ‘Statistics’.</li>
+<li>Run ‘Avg. Weighted Degree’</li>
+<li>Go to ‘Data Laboratory’, and you will find statistics for several types of centrality measures, including ‘Weighted In-Degree’, ‘Weighted Out-Degree’, and ‘Weighted Degree’</li>
+</ol>
+<p>We will focus on <strong>‘Weighted Out-Degree’</strong> centrality, as this represents the number of edges connected to each node, taking into account the weight of the edges. 
+  In our case, it measures <strong>a broker’s investement in or its shares of the 50 companies in the Enigma Network</strong>. 
+  In other words, the nodes with high degree in this measurement are probably the ‘big bosses’ behind the network.</p>
+<h3 id="visualising-the-network">Visualising the Network</h3>
+<p>Before we analysis the result of centrality measures, we can do some refinements to the network visualisation.</p>
+<ol>
+<li>Go to ‘Overview’ and select ‘Filters’</li>
+<li>Select ‘Edge Weight’ under ‘Edges’</li>
+<li>Change the ‘Edge Weight’ range from ‘0.01 to 75.04’ to <strong>‘1 to 75.04’.</strong></li>
+<li>Click on ‘Select’ and then on ‘Filter’</li>
+<li>Click on the ‘Attributes’ button and select ‘company’. Then click on the bold ‘T’ next to the ‘Attributes’ button to make the names of the entities pop up.</li>
+<li>Go to ‘Appearance’ and click on the ‘Size’ button</li>
+<li>Select ‘Ranking’ and choose ‘Weighted Out-Degree’. Then, change the ‘Min size’ to <strong>‘10’</strong> and the ‘Max size’ to <strong>'80’</strong></li>
+<li>Click on the ‘Label Size’ button</li>
+<li>Select ‘Ranking’ and choose ‘Weighted Out-Degree’. Then, change the ‘Min size’ to <strong>‘0.5’</strong> and the ‘Max size’ to <strong>'4’</strong></li>
+<li>Select <strong>‘Label Adjust’</strong> under ‘Layout’, then click ‘Run’</li>
+</ol>
+<p>You can export the visualisation as a graph file or take a screenshot using the ‘Take screenshot’ button.
+   <strong>Remember to adjust the width and height in the ‘Screenshot settings’ menu to improve the picture’s resolution</strong>.</p>
+<h3 id="analysing-the-network">Analysing the Network</h3>
+<ol>
+<li>Go to ‘Data Laboratory’</li>
+<li>Re-order the ‘Weighted Out-Degree’ from largest to smallest</li>
+</ol>
+<p>You can then identify the securities companies that masterminded the ‘Enigma Network’. Interestingly, some of the nodes with a high weighted out-degree are major banks, such as HSBC and the Bank of China. 
+  These banks were certainly not involved in the conspiracy, other than holding shares in the 50 companies for various reasons. It is therefore useful to remove these banks from the dataset.</p>
+<h2 id="refine-the-dataset-in-openrefine">Refine the Dataset in OpenRefine</h2>
+<ol>
+<li>Upload the <strong>‘OpenRefine Results’</strong> spreadsheet to OpenRefine from the '<a href="https://github.com/DCS-training/DCS_Datasets/blob/main/xlsx/Enigma%20Network_Gephi%20Dataset%20Guide.xlsx" target="_blank">Enigma Network_Gephi Dataset Guide.xlsx’</a>.</li>
+<li>Select only the <strong>‘OpenRefine Results’</strong> spreadsheet, and then check the box next to ‘Parse next’ and enter <strong>‘1’</strong> between ‘Parse next’ and ‘line(s) as column’</li>
+<li>Click on ‘Create projects’</li>
+<li>Click on the button next to column 3, select ‘Edit cells’, and then choose ‘Replace’</li>
+<li>Type ‘The Hongkong And Shanghai Banking’ into the ‘Find’ box, then leave the ‘Replace with’ box blank. Then click ‘OK’</li>
+<li>Do the same for ‘Bank Of China (hong Kong) Ltd’</li>
+<li>Click on the button next to ‘All’, select ‘Facet’, and then click ‘Facet by blank (null or empty string)’</li>
+<li>Go to ‘Facet/ Filter’, the click on the box under ‘Blank rows’</li>
+<li>Change the General Refine Expression Language (GREL) expression to <strong>'isBlank(cells[“Column 3”].value)'</strong></li>
+<li>Select ‘true’</li>
+<li>Click on the button next to ‘All’, select ‘Edit rows’, and then click <strong>'Remove all matching rows’</strong></li>
+</ol>
+<p>You can do the same for other banks, such as Citibank and UBS. Save the file as .xlsx and then repeat the above steps to prepare a Gephi dataset and network.</p>
+<h2 id="credits">Credits</h2>
+<p><strong>About the author</strong><br>
+Brian Tsz Ho Wong is a <a href="https://edwebprofiles.ed.ac.uk/profile/tsz-ho-wong" target="_blank">PhD student at the University of Edinburgh</a>. 
+His thesis examines the economic and financial mobilisation of the Japanese Empire during WWII. 
+Nascent findings have recently been <a href="https://doi.org/10.1017/S0968565025100073" target="_blank">published in the <em>Financial History Review</em></a>. 
+Outside of his PhD project, he is a Training Fellow at the University of Edinburgh’s Centre for Data, Culture and Society, where he has delivered courses on applying network analysis to humanities research. 
+He is also a regular contributor to the <a href="https://digitalorientalist.com/" target="_blank"><em>Digital Orientalist</em></a> and is a member of the <a href="https://cwar-institute.org/" target="_blank">Cold War Archival Research Institute</a>.</p>
+<p><strong>Suggested citation</strong>: Tsz Ho Wong, “Deciphering a Financial Network with Gephi,” CDCS Tutorials, 2025</p>
+<p>This resource’s data was extracted from <a href="https://webb-site.com/" target="_blank">Webb-site</a>, a free database.</p>
+<p>This resource is covered by a CC-BY-NC 4.0 license</p>
+<p>Please help us keeping our tutorials up to date. If you find something that is not working email us at <a href="mailto:cdcs@ed.ac.uk" target="_blank">cdcs@ed.ac.uk</a></p>
+</div>
+</body>
+
+</html>
