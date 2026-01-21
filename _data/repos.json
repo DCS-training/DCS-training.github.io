@@ -86,8 +86,8 @@
     ]
   },
   {
-    "name": "DH-RSE-SummerSchool",
-    "url": "https://github.com/DCS-training/DH-RSE-SummerSchool",
+    "name": "DH-RSE-SummerSchool-2021",
+    "url": "https://github.com/DCS-training/DH-RSE-SummerSchool-2021",
     "topics": [
       "data-visualisation",
       "data-wrangling",
@@ -536,8 +536,8 @@
     ]
   },
   {
-    "name": "IntroToStatistics",
-    "url": "https://github.com/DCS-training/IntroToStatistics",
+    "name": "DescriptiveStatistics",
+    "url": "https://github.com/DCS-training/DescriptiveStatistics",
     "topics": [
       "data-analysis",
       "r",
@@ -697,8 +697,8 @@
     "topics": []
   },
   {
-    "name": "RegressionAndMixedEffectsModelling",
-    "url": "https://github.com/DCS-training/RegressionAndMixedEffectsModelling",
+    "name": "Linear-Mixed-Effects-Modelling",
+    "url": "https://github.com/DCS-training/Linear-Mixed-Effects-Modelling",
     "topics": [
       "data-analysis",
       "r",
@@ -792,11 +792,6 @@
     ]
   },
   {
-    "name": "SPSS-to-R-Full-Tutorial",
-    "url": "https://github.com/DCS-training/SPSS-to-R-Full-Tutorial",
-    "topics": []
-  },
-  {
     "name": "cdcs-xml-course",
     "url": "https://github.com/DCS-training/cdcs-xml-course",
     "topics": []
@@ -804,51 +799,169 @@
   {
     "name": "2024-11-18-CDCS-Carpentry-Social-Sciences",
     "url": "https://github.com/DCS-training/2024-11-18-CDCS-Carpentry-Social-Sciences",
-    "topics": []
+    "topics": [
+      "data-analysis",
+      "data-visualisation",
+      "data-wrangling",
+      "intro-to-programming",
+      "r"
+    ]
   },
   {
     "name": "EFIDeepDive",
     "url": "https://github.com/DCS-training/EFIDeepDive",
-    "topics": []
+    "topics": [
+      "data-visualisation",
+      "data-wrangling",
+      "geographical-data",
+      "r",
+      "text-analysis"
+    ]
   },
   {
     "name": "legal-ethical-issues-webscraping",
     "url": "https://github.com/DCS-training/legal-ethical-issues-webscraping",
-    "topics": []
+    "topics": [
+      "copyright",
+      "ethics",
+      "webscraping"
+    ]
   },
   {
     "name": "web-scraping-R-2024",
     "url": "https://github.com/DCS-training/web-scraping-R-2024",
-    "topics": []
+    "topics": [
+      "data-wrangling",
+      "r",
+      "web-scraping"
+    ]
   },
   {
     "name": "IntroToQGIS_2024",
     "url": "https://github.com/DCS-training/IntroToQGIS_2024",
-    "topics": []
-  },
-  {
-    "name": "hansard_data",
-    "url": "https://github.com/DCS-training/hansard_data",
-    "topics": []
+    "topics": [
+      "data-visualisation",
+      "geographical-data",
+      "gis",
+      "qgis"
+    ]
   },
   {
     "name": "A-Pipeline-for-Data-Wrangling-and-Manipulation-with-R",
     "url": "https://github.com/DCS-training/A-Pipeline-for-Data-Wrangling-and-Manipulation-with-R",
-    "topics": []
+    "topics": [
+      "data-visualisation",
+      "data-wrangling",
+      "r"
+    ]
   },
   {
     "name": "data-analysis-in-python",
     "url": "https://github.com/DCS-training/data-analysis-in-python",
-    "topics": []
+    "topics": [
+      "data-cleaning",
+      "data-wrangling",
+      "python"
+    ]
   },
   {
     "name": "PolarisationWithR",
     "url": "https://github.com/DCS-training/PolarisationWithR",
-    "topics": []
+    "topics": [
+      "polarization",
+      "r",
+      "sentiment-analysis",
+      "text-analysis"
+    ]
   },
   {
     "name": "Processing-Geographical-Data-in-QGIS",
     "url": "https://github.com/DCS-training/Processing-Geographical-Data-in-QGIS",
+    "topics": [
+      "data-analysis",
+      "data-visualisation",
+      "geographical-data",
+      "gis",
+      "qgis"
+    ]
+  },
+  {
+    "name": "Text-Analysis-and-the-Humanities",
+    "url": "https://github.com/DCS-training/Text-Analysis-and-the-Humanities",
+    "topics": [
+      "python",
+      "text-analysis"
+    ]
+  },
+  {
+    "name": "AdvancedLLMs",
+    "url": "https://github.com/DCS-training/AdvancedLLMs",
+    "topics": [
+      "ai",
+      "llm",
+      "text-analysis"
+    ]
+  },
+  {
+    "name": "StatAccountScotland",
+    "url": "https://github.com/DCS-training/StatAccountScotland",
+    "topics": []
+  },
+  {
+    "name": "DCS_Datasets",
+    "url": "https://github.com/DCS-training/DCS_Datasets",
+    "topics": [
+      "dataset"
+    ]
+  },
+  {
+    "name": "Data-Wrangling-Snippets-of-Code",
+    "url": "https://github.com/DCS-training/Data-Wrangling-Snippets-of-Code",
+    "topics": []
+  },
+  {
+    "name": "OCR-From-Images-To-Text-2025",
+    "url": "https://github.com/DCS-training/OCR-From-Images-To-Text-2025",
+    "topics": []
+  },
+  {
+    "name": "Text-Classification-in-Practice-From-Topic-Models-to-Transformers",
+    "url": "https://github.com/DCS-training/Text-Classification-in-Practice-From-Topic-Models-to-Transformers",
+    "topics": []
+  },
+  {
+    "name": "Data-In-The-Wild",
+    "url": "https://github.com/DCS-training/Data-In-The-Wild",
+    "topics": []
+  },
+  {
+    "name": "dataset-submission-LuciaTeachingAccount",
+    "url": "https://github.com/DCS-training/dataset-submission-LuciaTeachingAccount",
+    "topics": []
+  },
+  {
+    "name": "version-control-2025",
+    "url": "https://github.com/DCS-training/version-control-2025",
+    "topics": []
+  },
+  {
+    "name": "Web-Scraping",
+    "url": "https://github.com/DCS-training/Web-Scraping",
+    "topics": []
+  },
+  {
+    "name": "From-Qualitative-Data-to-Quantified-Connections-An-Introduction-to-Epistemic-Network-Analysis",
+    "url": "https://github.com/DCS-training/From-Qualitative-Data-to-Quantified-Connections-An-Introduction-to-Epistemic-Network-Analysis",
+    "topics": []
+  },
+  {
+    "name": "APIs_For_Research_2025",
+    "url": "https://github.com/DCS-training/APIs_For_Research_2025",
+    "topics": []
+  },
+  {
+    "name": "InferentialStatistics",
+    "url": "https://github.com/DCS-training/InferentialStatistics",
     "topics": []
   }
 ]
