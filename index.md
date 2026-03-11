@@ -20,11 +20,11 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <div class="column">
         <h4>Good Practices of Digital Research</h4>
         <img src="https://www.cdcs.ed.ac.uk/files/2023-10/Group%20in%20workshop.png" alt="Image 1">
-        <ul>
+  <ul>
            <li><a href="Tutorials/SPSSTutorial.html" target="_blank">Make your Statistical Analysis Reproducible (From SPSS to R)</a></li>
            <li><a href="Tutorials/ShinyApps.html" target="_blank">Share your research Results with Interactive Applications (SHINY)</a></li>
            <li>More to Come Soon</li>
-        </ul>
+        </ul>      
         </div>
         <div class="column">
         <h4>Intro to Programming</h4>
@@ -97,6 +97,9 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
      {% include button.html text="Email Us" link="mailto:CDCS@ed.ac.uk" color="#fd0e67" %} 
      {% include button.html text="On BlueSky" link="https://bsky.app/profile/edcdcs.bsky.social" color="#002e5f" %} 
     </p>
+    <h3>Research Adaptation: Guidance and Case Studies</h3> 
+    <p> In June 2021, the Centre for Data, Culture & Society and the Research Office of the College of Arts, Humanities and Social Sciences held three online workshops focused on adapting approaches to research in the context of ongoing remote and hybrid working.  Each workshop focused on one research area that has been significantly impacted by social distancing measures, with the aim of capturing ideas, resources, advice and tips from the community to share more widely. As a part of this work we were also able to resource the development of ethics guidance for social media research, and to gather a set of 'research adaptation case studies' provided by local researchers. While there is now a considerable amount of general resources and guidance available, we wanted to explore what is required locally for our community to move forward and invest in developing hybrid and remote research methods. </p>
+    <h4> <a href="research-adaptation.html">Explore More </a> </h4>
     <script>
     const repos = {{ site.data.repos | jsonify }};
     console.log('Fetched repositories:', repos);
