@@ -3,7 +3,7 @@ title:
 feature_text: |
   ## CDCS Training Material
   "Collaboration and community are at the heart of what we do"
-feature_image: "https://www.cdcs.ed.ac.uk/files/2024-08/BannerImage.png"
+feature_image: "images/BannerImage.png"
 excerpt: "This page is set up to facilitate the use of the CDCS repositories."
 ---
 <html>
@@ -19,7 +19,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <div class="row">
         <div class="column">
         <h4>Good Practices of Digital Research</h4>
-        <img src="https://www.cdcs.ed.ac.uk/files/2023-10/Group%20in%20workshop.png" alt="Image 1">
+        <img src="images/Group in workshop.png" alt="Image 1">
   <ul>
            <li><a href="Tutorials/SPSSTutorial.html" target="_blank">Make your Statistical Analysis Reproducible (From SPSS to R)</a></li>
            <li><a href="Tutorials/ShinyApps.html" target="_blank">Share your research Results with Interactive Applications (SHINY)</a></li>
@@ -35,7 +35,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         </div>
         <div class="column">
         <h4>Digitised Document & Text Analysis</h4>
-        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Recordings.png" alt="Image 3">
+        <img src="images/Recordings.png" alt="Image 3">
         <ul>
         <li><a href="Tutorials/MappingAFamilyNetwork.html" target="_blank">Mapping a Family Network with Gephi</a></li>
            <li><a href="Tutorials/DecipheringAFinancialNetwork.html" target="_blank">Deciphering a Financial Network with Gephi</a></li>
@@ -46,21 +46,21 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         <div class="row">
         <div class="column">
         <h4>Data Wrangling & Data Visualisation</h4>
-        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/weaving%20black%20and%20white.png" alt="Image 4">
+        <img src="images/weaving black and white.png" alt="Image 4">
          <ul>
            <li>More to Come Soon</li>
         </ul>
         </div>
         <div class="column">
         <h4>Geographical Data & Digital Drawing </h4>
-        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Atlas%20Black%20and%20white.png" alt="Image 5">
+        <img src="images/Atlas Black and white.png" alt="Image 5">
          <ul>
            <li>More to Come Soon</li>
         </ul>
         </div>
         <div class="column">
         <h4>Structured Data Analysis</h4>
-        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/Typewriter%20black%20and%20white.png" alt="Image 6">
+        <img src="images/Typewriter black and white.png" alt="Image 6">
          <ul>
            <li><a href="Tutorials/bayesian-statistics.html">Introduction to Bayesian Statistics</a></li>
            <li>More to Come Soon</li>
@@ -95,6 +95,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
     <h3>Research Adaptation: Guidance and Case Studies</h3> 
     <p> In June 2021, the Centre for Data, Culture & Society and the Research Office of the College of Arts, Humanities and Social Sciences held three online workshops focused on adapting approaches to research in the context of ongoing remote and hybrid working.  Each workshop focused on one research area that has been significantly impacted by social distancing measures, with the aim of capturing ideas, resources, advice and tips from the community to share more widely. As a part of this work we were also able to resource the development of ethics guidance for social media research, and to gather a set of 'research adaptation case studies' provided by local researchers. While there is now a considerable amount of general resources and guidance available, we wanted to explore what is required locally for our community to move forward and invest in developing hybrid and remote research methods. </p>
     <h4> <a href="research-adaptation.html" target="blank">Explore More </a> </h4>
+    <p></p>
     <h1> Contacts </h1>
     <p>
      {% include button.html text="Email Us" link="mailto:CDCS@ed.ac.uk" color="#fd0e67" %} 
