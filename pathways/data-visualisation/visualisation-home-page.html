@@ -101,12 +101,12 @@
 
       // down path
       const pathPoints = [
-        { x: 0, y: yTop },
+        { x: nodes[0].x, y: yTop },
         { x: mid23, y: yTop },
         { x: mid23, y: yBottom },
         { x: mid45, y: yBottom },
         { x: mid45, y: yTop },
-        { x: width, y: yTop },
+        { x: nodes[nodeCount - 1].x, y: yTop },
       ];
 
       // upper path
@@ -344,7 +344,7 @@
       calloutText
         .append("tspan")
         .attr("x", connectorMid.x)
-        .attr("y", callout.y +10)
+        .attr("y", callout.y + 10)
         .text("IF YOUR DATA IS IN A SIMPLE SPREADSHEET,");
 
       calloutText
