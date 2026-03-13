@@ -15,6 +15,7 @@
       #visualization {
         font-family: "Source Sans 3", sans-serif;
         padding: 1rem;
+        background: #ebebeb;
       }
 
       #visualization svg {
@@ -69,7 +70,7 @@
       const boxWidth = (width - boxGap * (nodeCount + 1)) / nodeCount;
       const nodeInset = boxGap + boxWidth / 2;
       const boxTextPaddingX = 10;
-      const boxTextPaddingY = 12;
+      const boxTextPaddingY = 20;
       const boxLineHeight = 18;
       const boxFontSize = 14;
       const boxFontWeight = 500;
@@ -279,7 +280,7 @@
             .y((d) => d.y)(pathPoints),
         )
         .attr("fill", "none")
-        .attr("stroke", "#1f2937")
+        .attr("stroke", "#041d40")
         .attr("stroke-width", 4)
         .attr("stroke-linecap", "round");
 
@@ -294,7 +295,7 @@
             .y((d) => d.y)(connectorPoints),
         )
         .attr("fill", "none")
-        .attr("stroke", "#2563eb")
+        .attr("stroke", "#e7135d")
         .attr("stroke-width", 4)
         .attr("stroke-linecap", "round")
         .attr("stroke-linejoin", "round");
@@ -306,7 +307,7 @@
         .attr("cy", connectorMid.y)
         .attr("r", 20)
         .attr("fill", "#ffffff")
-        .attr("stroke", "#2563eb")
+        .attr("stroke", "#e7135d")
         .attr("stroke-width", 4)
         .attr("cursor", "pointer")
         .attr("role", "link")
@@ -328,7 +329,7 @@
         .attr("dominant-baseline", "middle")
         .attr("font-size", 18)
         .attr("font-weight", 700)
-        .attr("fill", "#1f2937")
+        .attr("fill", "#e7135d")
         .attr("pointer-events", "none")
         .text("?");
 
@@ -338,7 +339,7 @@
         .attr("text-anchor", "middle")
         .attr("font-size", 16)
         .attr("font-weight", 500)
-        .attr("fill", "#1f2937");
+        .attr("fill", "#e7135d");
 
       // text for jump
       calloutText
@@ -430,7 +431,7 @@
         .attr("cy", (d) => d.y)
         .attr("r", nodeRadius)
         .attr("fill", "#ffffff")
-        .attr("stroke", "#2563eb")
+        .attr("stroke", "#e7135d")
         .attr("stroke-width", 4)
         .attr("cursor", "pointer")
         .attr("role", "link")
@@ -455,7 +456,7 @@
         .attr("dominant-baseline", "middle")
         .attr("font-size", 14)
         .attr("font-weight", 600)
-        .attr("fill", "#1f2937")
+        .attr("fill", "#041d40")
         .attr("pointer-events", "none")
         .text((d, i) => i + 1);
     </script>
