@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pathway of Learning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #000;
+        }
+        h1 {
+            margin-top: 2rem;
+            text-align: centre;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .column {
+            background: #fff;
+            border: 2px solid #000;
+            flex: 1 1 300px;
+            max-width: 32%;
+            box-sizing: border-box;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 250px;
+        }
+        .column img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+            border-radius: 6px;
+        }
+        .column h4 {
+            margin-top: 0;
+        }
+        @media (max-width: 900px) {
+            .row {
+                flex-direction: column;
+            }
+            .column {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        ul {
+            margin-left: 1.5em;
+        }
+        /* --- MEDIA BLOCKS STYLE --- */
+        .media-row {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fff;
+            padding: 1.5em;
+            gap: 2rem;
+        }
+        .media-text {
+            flex: 1 1 50%;
+            min-width: 250px;
+        }
+        .media-video {
+            flex: 1 1 50%;
+            max-width: 608px;
+            text-align: centre;
+        }
+        .media-video img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .media-video iframe {
+             width: 100%;
+             max-width: 608px;
+             height: 340px;
+             border-radius: 8px;
+             display: block;
+            }
+
+        @media (max-width: 900px) {
+            .media-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .media-video, .media-text {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pathway of Learning</h1>
+        <p>The world of digital research methods can offer overwhelming possibilities so, with the help of researchers that have already implemented digital methods in their own work, we are building a series of pathways that will guide beginners through the steps and concepts they need to master new methodologies.
+
+We constantly improve our pathways and create new ones. If you are a researcher and you have suggestions about our existing pathways or you want to propose new ones, we'd love to hear from you.</p>
+
+        <div class="row">
+            <div class="column">
+                <h3><a href="data-visualisation/visualisation-home-page.html" target="_blank">Data Visualisation</a></h3>
+                <img src="../images/archive.png" alt="Image of group in workshop">
+                <p>Data Visualisation allows you to explore you data and present it to others. This pathway will help you find out how to get your data into good shape - always the first step you have to go through - how to analyse it, and how to build beautiful graphs. </p>
+
+            </div>
+            <div class="column">
+                <h3><a href="statistics/statistics-home-page.html" target="_blank">Satatistical Analysis</a></h3>
+                <img src="../images/participation.png" alt="Image of group in workshop">
+                <p>In order to perform high-quality statistical analyses of your dataset, you'll need to go through a series of steps to organise and clean the data. This learning pathway will guide you on how to clean and analyse your data, and help you understand what relevant tools are available. </p>
+            </div>
+            <div class="column">
+                <h3><a href="digitised-documents/digitised-documents-home-page.html" target="_blank">Managing digitised documents</a></h3>
+                <img src="../images/public.png" alt="Image of group in workshop">
+                <p>With the growing availability of digitised documents, there are countless ways that they can be used and analysed.  This pathway will help you orient yourself among the different technologies and software available and help you understand how to get the best out of digitised documents.</p>
+            </div>
+            <div class="column">
+                <h3><a href="text-analysis/text-analysis-home-page.html" target="_blank">Text Analysis</a></h3>
+                <img src="../images/archive.png" alt="Image of group in workshop">
+                <p>Text analysis allows patterns in language to be studied at scale, enabling “ distant reading” of books, magazines, newspapers, and other digitized text. This pathway will guide you through the main steps and techniques needed to begin doing computational analysis of textual data.</p>
+
+            </div>
+            <div class="column">
+                <h3><a href="sentiment-analysis/sentiment-analysis-home-page.html" target="_blank">Sentiment Analysis</a></h3>
+                <img src="../images/archive.png" alt="Image of group in workshop">
+                <p>Sentiment analysis (or opinion mining) is a method used to determine whether data is positive, negative or neutral. It is often used by businesses to assess customer feedback and understand customer needs.</p>
+
+            </div>
+            <div class="column">
+                <h3><a href="3D-data/3D-data-home-page.html" target="_blank">Working with 3D Data</a></h3>
+                <img src="../images/archive.png" alt="Image of group in workshop">
+                <p>There are different techniques and methods to create and work with 3D data. This pathway will help you identify the best option depending on what are you trying to do./p>
+
+            </div>
+        </div>
+</div>
+</body>
+</html>
