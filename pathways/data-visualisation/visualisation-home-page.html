@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <style>
+      #visualization {
+        font-family: "Source Sans 3", sans-serif;
+        padding: 1rem;
+      }
+
+      #visualization svg {
+        display: block;
+        width: 100%;
+        height: 680px;
+        border: 1px solid #d0d7de;
+        overflow: visible;
+        border-radius: 5px;
+      }
+
+      #below-visualization-text {
+        font-family: "Source Sans 3", sans-serif;
+        width: 70vw;
+        margin: 1.5rem auto 2rem;
+        color: #1f2937;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="visualization">
+      <svg viewBox="0 0 960 700" aria-label="Visualization canvas"></svg>
+    </div>
+    <div id="below-visualization-text">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+        facilisis, nunc vitae tincidunt convallis, lectus enim faucibus sem, at
+        aliquet augue tortor ut nunc. Proin non urna feugiat, posuere dolor
+        eget, tempus lectus.
+      </p>
+      <p>
+        Curabitur ultricies sem non justo commodo, vitae feugiat arcu rhoncus.
+        Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci
+        luctus et ultrices posuere cubilia curae.
+      </p>
+    </div>
+    <script>
+      const svg = d3.select("#visualization svg");
+      const width = 960;
+      const height = 700;
+      const nodeCount = 6;
+      const nodeRadius = 18;
+      const pathDrop = 150;
+      const reservedBottomSpace = 250;
+      const visualizationOffsetY = -70;
+
+      //   text boxes
+      const boxGap = 16;
+      const boxMinHeight = 110;
+      const boxWidth = (width - boxGap * (nodeCount + 1)) / nodeCount;
+      const nodeInset = boxGap + boxWidth / 2;
+      const boxTextPaddingX = 10;
+      const boxTextPaddingY = 12;
+      const boxLineHeight = 18;
+      const boxFontSize = 14;
+      const boxFontWeight = 500;
+      //position text under normal nodes
+      const nodeBoxTextOffsetY = -20;
+
+      // reserve lower area for future equal-width text boxes under each node
+      const yBottom = height - reservedBottomSpace + visualizationOffsetY;
+      const yTop = yBottom - pathDrop;
+
+      // upper connection line
+      const yUpper = yTop - 120;
+
+      // x scale for box positions
+      const xScale = d3
+        .scaleLinear()
+        .domain([0, nodeCount - 1])
+        .range([nodeInset, width - nodeInset]);
+
+      // x and y positions of nodes
+      const nodes = d3.range(nodeCount).map((index) => ({
+        x: xScale(index),
+        y: index === 2 || index === 3 ? yBottom : yTop,
+      }));
+
+      //   midway down path between 2/3 and 4/5
+      const mid23 = (nodes[1].x + nodes[2].x) / 2;
+      const mid45 = (nodes[3].x + nodes[4].x) / 2;
+
+      // down path
+      const pathPoints = [
+        { x: 0, y: yTop },
+        { x: mid23, y: yTop },
+        { x: mid23, y: yBottom },
+        { x: mid45, y: yBottom },
+        { x: mid45, y: yTop },
+        { x: width, y: yTop },
+      ];
+
+      // upper path
+      const connectorPoints = [
+        { x: nodes[1].x, y: nodes[1].y },
+        { x: nodes[1].x, y: yUpper },
+        { x: nodes[4].x, y: yUpper },
+        { x: nodes[4].x, y: nodes[4].y },
+      ];
+
+      // break points for path
+      const connectorMid = {
+        x: (nodes[1].x + nodes[4].x) / 2,
+        y: yUpper,
+      };
+
+      const callout = {
+        width: 280,
+        height: 72,
+        x: connectorMid.x - 140,
+        y: connectorMid.y + 34,
+      };
+
+      //   populate nodes with text
+      const boxTexts = [
+        `Principles of Data Organisation and 
+        Fair Data. Is the data you are going to 
+        use already in a table? Is the table 
+        correctly formatted? Get help with the 
+        principles of data organisation.`,
+        `Tidying Data with Open Refine.
+        Learn how to tidy up messy data 
+        tables with Open Refine.`,
+        `Principles of Relational Databases.
+        For complex data, you may need to understand 
+        and use a database. To do this you will need 
+        to familiarise with its principles.`,
+        `Analyse and Modify Data with SQL.
+        Once your data is cleaned and organised 
+        in a database, you can learn to modify 
+        and extract information from them using 
+        SQL queries.`,
+        `Data Wrangling. Import the data into R or Python, 
+        and learn to create breakouts and present in 
+        tabular form.`,
+        `Building Graphs. Create beautiful and reusable 
+        graphic visualisations of the info within your 
+        dataset. What do you want to show?`,
+      ];
+
+      // url for node clicking
+      const nodeLink = "https://www.google.com";
+
+      function openNodeLink() {
+        window.open(nodeLink, "_blank", "noopener,noreferrer");
+      }
+
+      //   text positioning
+      const measureText = svg
+        .append("text")
+        .attr("x", -9999)
+        .attr("y", -9999)
+        .attr("font-size", boxFontSize)
+        .attr("font-weight", boxFontWeight)
+        .attr("visibility", "hidden");
+
+      function getWrappedLines(value, maxWidth) {
+        const words = String(value)
+          .replace(/\s+/g, " ")
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+        if (!words.length) return [];
+
+        const fontWeight = arguments[2] ?? boxFontWeight;
+        measureText.attr("font-weight", fontWeight);
+        const lines = [];
+        let line = [];
+
+        for (const word of words) {
+          line.push(word);
+          measureText.text(line.join(" "));
+
+          if (
+            measureText.node().getComputedTextLength() > maxWidth &&
+            line.length > 1
+          ) {
+            line.pop();
+            lines.push(line.join(" "));
+            line = [word];
+          }
+        }
+
+        if (line.length) {
+          lines.push(line.join(" "));
+        }
+
+        measureText.attr("font-weight", boxFontWeight);
+        return lines;
+      }
+
+      //   get heading from boxtext variable
+      function splitHeadingAndBody(value) {
+        const normalized = String(value).replace(/\s+/g, " ").trim();
+        if (!normalized) {
+          return { heading: "", body: "" };
+        }
+
+        const delimiters = [",", ".", ":", ";"];
+        const delimiterIndexes = delimiters
+          .map((delimiter) => normalized.indexOf(delimiter))
+          .filter((index) => index !== -1);
+
+        if (!delimiterIndexes.length) {
+          return { heading: normalized, body: "" };
+        }
+
+        const splitIndex = Math.min(...delimiterIndexes);
+        return {
+          heading: normalized.slice(0, splitIndex).trim(),
+          body: normalized.slice(splitIndex + 1).trim(),
+        };
+      }
+
+      const nodeBoxes = nodes.map((node, index) => ({
+        ...(() => {
+          const parsed = splitHeadingAndBody(boxTexts[index]);
+          const maxTextWidth = boxWidth - boxTextPaddingX * 2;
+          const headingLines = getWrappedLines(
+            parsed.heading.toUpperCase(),
+            maxTextWidth,
+            700,
+          );
+          const bodyLines = getWrappedLines(
+            parsed.body,
+            maxTextWidth,
+            boxFontWeight,
+          );
+          const headingGap = headingLines.length && bodyLines.length ? 6 : 0;
+          const lineCount = headingLines.length + bodyLines.length;
+          const textHeight =
+            lineCount * boxLineHeight + headingGap + boxTextPaddingY * 2;
+
+          return {
+            x: node.x - boxWidth / 2,
+            y: node.y + nodeRadius + 20,
+            headingLines,
+            bodyLines,
+            headingGap,
+            boxHeight: Math.max(boxMinHeight, textHeight),
+          };
+        })(),
+      }));
+
+      measureText.remove();
+
+      const maxBoxBottom = d3.max(nodeBoxes, (d) => d.y + d.boxHeight);
+      const contentHeight = Math.max(height, maxBoxBottom + 20);
+      svg.attr("viewBox", `0 0 ${width} ${contentHeight}`);
+      svg.style("height", `${contentHeight}px`);
+
+      // draw down path
+      svg
+        .append("path")
+        .attr(
+          "d",
+          d3
+            .line()
+            .x((d) => d.x)
+            .y((d) => d.y)(pathPoints),
+        )
+        .attr("fill", "none")
+        .attr("stroke", "#1f2937")
+        .attr("stroke-width", 4)
+        .attr("stroke-linecap", "round");
+
+      // draw upper path
+      svg
+        .append("path")
+        .attr(
+          "d",
+          d3
+            .line()
+            .x((d) => d.x)
+            .y((d) => d.y)(connectorPoints),
+        )
+        .attr("fill", "none")
+        .attr("stroke", "#2563eb")
+        .attr("stroke-width", 4)
+        .attr("stroke-linecap", "round")
+        .attr("stroke-linejoin", "round");
+
+      // draw upper circle
+      svg
+        .append("circle")
+        .attr("cx", connectorMid.x)
+        .attr("cy", connectorMid.y)
+        .attr("r", 20)
+        .attr("fill", "#ffffff")
+        .attr("stroke", "#2563eb")
+        .attr("stroke-width", 4)
+        .attr("cursor", "pointer")
+        .attr("role", "link")
+        .attr("tabindex", 0)
+        .on("click", openNodeLink)
+        .on("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openNodeLink();
+          }
+        });
+
+      // draw label for upper circle
+      svg
+        .append("text")
+        .attr("x", connectorMid.x)
+        .attr("y", connectorMid.y)
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .attr("font-size", 18)
+        .attr("font-weight", 700)
+        .attr("fill", "#1f2937")
+        .attr("pointer-events", "none")
+        .text("?");
+
+      // draw callout text
+      const calloutText = svg
+        .append("text")
+        .attr("text-anchor", "middle")
+        .attr("font-size", 16)
+        .attr("font-weight", 500)
+        .attr("fill", "#1f2937");
+
+      // text for jump
+      calloutText
+        .append("tspan")
+        .attr("x", connectorMid.x)
+        .attr("y", callout.y +10)
+        .text("IF YOUR DATA IS IN A SIMPLE SPREADSHEET,");
+
+      calloutText
+        .append("tspan")
+        .attr("x", connectorMid.x)
+        .attr("y", callout.y + 30)
+        .text("JUMP TO STEP 5");
+
+      // draw equal-width rectangles under normal nodes
+      svg
+        .selectAll("rect.node-box")
+        .data(nodeBoxes)
+        .join("rect")
+        .attr("class", "node-box")
+        .attr("x", (d) => d.x)
+        .attr("y", (d) => d.y)
+        .attr("width", boxWidth)
+        .attr("height", (d) => d.boxHeight)
+        .attr("rx", 10)
+        .attr("fill", "#ffffff");
+      //   .attr("stroke", "#2563eb")
+      //   .attr("stroke-width", 2);
+
+      // draw placeholder text inside each rectangle
+      const nodeBoxLabels = svg
+        .selectAll("text.node-box-label")
+        .data(nodeBoxes)
+        .join("text")
+        .attr("class", "node-box-label")
+        .attr("x", (d) => d.x + boxTextPaddingX)
+        .attr("y", (d) => d.y + boxTextPaddingY)
+        .attr("text-anchor", "start")
+        .attr("font-size", boxFontSize)
+        .attr("font-weight", boxFontWeight)
+        .attr("fill", "#1f2937");
+
+      nodeBoxLabels.each(function (d) {
+        const text = d3.select(this);
+        const leftX = d.x + boxTextPaddingX;
+        const lineCount = d.headingLines.length + d.bodyLines.length;
+        const textBlockHeight = lineCount * boxLineHeight + d.headingGap;
+        const startY =
+          d.y +
+          (d.boxHeight - textBlockHeight) / 2 +
+          boxFontSize +
+          nodeBoxTextOffsetY;
+        let cursorY = startY;
+
+        text.text(null);
+
+        d.headingLines.forEach((line) => {
+          text
+            .append("tspan")
+            .attr("x", leftX)
+            .attr("y", cursorY)
+            .attr("font-weight", 700)
+            .text(line);
+          cursorY += boxLineHeight;
+        });
+
+        if (d.headingLines.length && d.bodyLines.length) {
+          cursorY += d.headingGap;
+        }
+
+        d.bodyLines.forEach((line) => {
+          text
+            .append("tspan")
+            .attr("x", leftX)
+            .attr("y", cursorY)
+            .attr("font-weight", boxFontWeight)
+            .text(line);
+          cursorY += boxLineHeight;
+        });
+      });
+
+      // draw normal circles
+      svg
+        .selectAll("circle.node")
+        .data(nodes)
+        .join("circle")
+        .attr("class", "node")
+        .attr("cx", (d) => d.x)
+        .attr("cy", (d) => d.y)
+        .attr("r", nodeRadius)
+        .attr("fill", "#ffffff")
+        .attr("stroke", "#2563eb")
+        .attr("stroke-width", 4)
+        .attr("cursor", "pointer")
+        .attr("role", "link")
+        .attr("tabindex", 0)
+        .on("click", openNodeLink)
+        .on("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openNodeLink();
+          }
+        });
+
+      // draw normal circle labels
+      svg
+        .selectAll("text.node-label")
+        .data(nodes)
+        .join("text")
+        .attr("class", "node-label")
+        .attr("x", (d) => d.x)
+        .attr("y", (d) => d.y)
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .attr("font-size", 14)
+        .attr("font-weight", 600)
+        .attr("fill", "#1f2937")
+        .attr("pointer-events", "none")
+        .text((d, i) => i + 1);
+    </script>
+  </body>
+</html>
