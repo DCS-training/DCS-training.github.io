@@ -91,6 +91,7 @@
 
       // x and y positions of nodes
       const nodes = d3.range(nodeCount).map((index) => ({
+        index,
         x: xScale(index),
         y: index === 2 || index === 3 ? yBottom : yTop,
       }));
@@ -157,11 +158,21 @@
         dataset. What do you want to show?`,
       ];
 
-      // url for node clicking
-      const nodeLink = "https://www.google.com";
+      // One URL per numbered node (1..6)
+      const nodeLinks = [
+        "https://example.com/step-1",
+        "https://example.com/step-2",
+        "https://example.com/step-3",
+        "https://example.com/step-4",
+        "https://example.com/step-5",
+        "https://example.com/step-6",
+      ];
 
-      function openNodeLink() {
-        window.open(nodeLink, "_blank", "noopener,noreferrer");
+      const upperNodeLink = "https://www.google.com";
+
+      function openNodeLink(link) {
+        if (!link) return;
+        window.open(link, "_blank", "noopener,noreferrer");
       }
 
       //   text positioning
@@ -311,11 +322,11 @@
         .attr("cursor", "pointer")
         .attr("role", "link")
         .attr("tabindex", 0)
-        .on("click", openNodeLink)
+        .on("click", () => openNodeLink(upperNodeLink))
         .on("keydown", (event) => {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            openNodeLink();
+            openNodeLink(upperNodeLink);
           }
         });
 
@@ -435,11 +446,11 @@
         .attr("cursor", "pointer")
         .attr("role", "link")
         .attr("tabindex", 0)
-        .on("click", openNodeLink)
-        .on("keydown", (event) => {
+        .on("click", (event, d) => openNodeLink(nodeLinks[d.index]))
+        .on("keydown", (event, d) => {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            openNodeLink();
+            openNodeLink(nodeLinks[d.index]);
           }
         });
 
