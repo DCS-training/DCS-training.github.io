@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Step 2 Data Visualisation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #000;
+        }
+        h1 {
+            margin-top: 2rem;
+            text-align: centre;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .column {
+            background: #fff;
+            border: 2px solid #000;
+            flex: 1 1 300px;
+            max-width: 32%;
+            box-sizing: border-box;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 250px;
+        }
+        .column img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+            border-radius: 6px;
+        }
+        .column h4 {
+            margin-top: 0;
+        }
+        @media (max-width: 900px) {
+            .row {
+                flex-direction: column;
+            }
+            .column {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        ul {
+            margin-left: 1.5em;
+        }
+        /* --- MEDIA BLOCKS STYLE --- */
+        .media-row {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fff;
+            padding: 1.5em;
+            gap: 2rem;
+        }
+        .media-text {
+            flex: 1 1 50%;
+            min-width: 250px;
+        }
+        .media-video {
+            flex: 1 1 50%;
+            max-width: 608px;
+            text-align: centre;
+        }
+        .media-video img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .media-video iframe {
+             width: 100%;
+             max-width: 608px;
+             height: 340px;
+             border-radius: 8px;
+             display: block;
+            }
+
+        @media (max-width: 900px) {
+            .media-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .media-video, .media-text {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tidying Data with OpenRefine</h1>
+        <p>No matter if your data is newly created or inherited, you will almost always need to clean it before creating graphs and charts. The data cleaning stage can be one of the most time-consuming and tedious tasks in research, but there are tools that can help. In this step, we are going to focus on a really powerful and fast tool that hopefully will help you saving time while cleaning your dataset.</p> 
+        <p>OpenRefine is a tool for working with messy data: cleaning it; transforming it from one format into another and extending it with web services and external data.</p>
+        <a href="https://openrefine.org/">OpenRefine Website</a>
+        
+        <h2>Why Use OpenRefine?</h2> 
+        
+        <ul>
+            <li>Data is often very messy. OpenRefine provides a set of tools that allow you to identify and amend the messy data </li>
+            <li>It is important to document what you do to your data. Publishers and funding bodies often require documentation of the steps you took when working with your data. With OpenRefine, you can capture all actions applied to your raw data and share them as supplemental material </li>
+            <li>All actions are easily reversed in OpenRefine </li>
+            <li>If you save your work it will be to a new file. OpenRefine always uses a copy of your data and does not modify your original dataset </li>
+            <li>Data cleaning steps often need repeating with multiple files. OpenRefine keeps track of all of your actions and allows them to be applied to different datasets </li>
+            <li>Some concepts such as clustering algorithms are quite complex, but OpenRefine makes it easy to introduce them, use them, and show their power </li>
+        </ul>
+
+         <a href="https://datacarpentry.org/openrefine-socialsci/01-introduction/">From the Data Carpentry Introduction to OpenRefine</a>
+        <p> </p>
+        <p> </p>
+        <p><strong>What can you do with OpenRefine?: </strong> </p>
+        <ul>
+            <li>Import data in various formats </li>
+            <li>Explore datasets in a matter of seconds</li>
+            <li>Apply basic and advanced cell transformations </li>
+            <li>Deal with cells that contain multiple values </li>
+            <li>Create instantaneous links between datasets </li>
+            <li>Filter and partition your data easily with regular expressions </li>
+            <li>Use named-entity extraction on full-text fields to automatically identify topics </li>
+            <li>Perform advanced data operations with the General Refine Expression Language </li>
+        </ul>
+        <a href="https://openrefine.org/documentation.html">OpenRefine Documentation</a>
+
+        
+
+         <h2>Where to find more information</h2>
+
+         <div class="row">
+            <div class="column">
+                <h3>Our Tutorials</h3>
+                <img src="../../images/Class black and white.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://media.ed.ac.uk/media/OpenRefine+Beginners+Tutorial/0_y5bxsswq" target="_blank">Deciphering a Financial Network with Gephi</a></li>
+                     <li><a href="https://media.ed.ac.uk/media/t/1_orzqd7vf" target="_blank">Working with OpenRefine (Video)</a></li>
+                </ul>
+                
+            </div>
+             <div class="column">
+                <h3>UoE Resources</h3>
+                <img src="../../images/Playfair Header.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://media.ed.ac.uk/media/Introduction+to+OpenRefine/1_m7mpdsxg" target="_blank">Introduction to OpenRefine (video) </a></li>
+                     <li><a href="https://www.epcc.ed.ac.uk/whats-happening/articles/using-openrefine-create-new-datasets" target="_blank">Using OpenRefine to create new datasets (EPCC) </a></li>
+                     <li><a href="https://media.ed.ac.uk/media/OpenRefine+demoA+a+tool+to+clean+up+and+enrich+datasets+-+Arthur+P+Smith+at+WikidataCon+2017/0_ghhln3yc" target="_blank">OpenRefine demo: a tool to clean up and enrich datasets (video) </a></li>
+                     <li><a href="https://media.ed.ac.uk/media/OpenRefine+Beginners+Tutorial+-+how+to+process+and+reconcile+datasets+by+Emma+Carroll/1_ujc73yrb" target="_blank">OpenRefine Beginners Tutorial - how to process and reconcile datasets by Emma Carroll (video) </a></li>
+                     <li><a href="https://media.ed.ac.uk/media/OpenRefine+Beginners+Tutorial/0_y5bxsswq" target="_blank">OpenRefine Beginners Tutorial (video) </a></li>          
+                    </ul>
+                
+            </div>
+             <div class="column">
+                <h3>Self-Guided Learning</h3>
+                <img src="../../images/Group with basket sepia.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://datacarpentry.github.io/openrefine-socialsci/" target="_blank">OpenRefine for Social Science Data (The Carpentries)</a></li>
+                     <li><a href="https://datacarpentry.github.io/OpenRefine-ecology-lesson/" target="_blank">OpenRefine for Ecologists (The Carpentries)</a></li>
+                     <li><a href="https://programminghistorian.org/en/lessons/cleaning-data-with-openrefine" target="_blank">Cleaning Data with OpenRefine (Programming Historian)</a></li>
+                     <li><a href="https://practicaldatamanagement.wordpress.com/2014/05/16/help-me-im-covered-in-bees-or-using-openrefine-to-clean-specimen-data/" target="_blank"> Data Cleaning with OpenRefine (tutorial)</a></li>
+                     <li><a href="https://cloud.wikis.utexas.edu/wiki/spaces/specify6/pages/39060842/Getting+Started+with+Google+Refine+now+OpenRefine" target="_blank">Getting Started with OpenRefine (University of Texas at Austin)</a></li>
+                     <li><a href="https://github.com/OpenRefine/OpenRefine/wiki/External-Resources" target="_blank">OpenRefine Further Resources</a></li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+  <a href="visualisation-home-page.html"
+     style="
+       display: inline-block;
+       padding: 0.75rem 2rem;
+       background: #e7135d ;
+       color: #fff;
+       font-size: 1.1rem;
+       font-family: 'Montserrat', sans-serif;
+       border-radius: 5px;
+       text-decoration: none;
+   ">
+    Back to the Data Visualisation Pathway Homepage
+  </a>
+</div>
+
+
+
+</div>
+</body>
+</html>
