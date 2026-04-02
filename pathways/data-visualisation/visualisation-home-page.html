@@ -54,22 +54,6 @@
         luctus et ultrices posuere cubilia curae.
       </p>
     </div>
-    <div style="text-align: center; margin: 2rem 0;">
-  <a href="../pathway-home.html"
-     style="
-       display: inline-block;
-       padding: 0.75rem 2rem;
-       background: #e7135d ;
-       color: #fff;
-       font-size: 1.1rem;
-       font-family: 'Montserrat', sans-serif;
-       border-radius: 5px;
-       text-decoration: none;
-   ">
-    Back to Pathway Homepage
-  </a>
-</div>
-
     <script>
       const svg = d3.select("#visualization svg");
       const width = 960;
@@ -177,12 +161,12 @@
 
       // One URL per numbered node (1..6)
       const nodeLinks = [
-        "step1.html",
-        "step2.html",
-        "step3.html",
-        "step4.html",
-        "step5.html",
-        "step6.html",
+        "https://example.com/step-1",
+        "https://example.com/step-2",
+        "https://example.com/step-3",
+        "https://example.com/step-4",
+        "https://example.com/step-5",
+        "https://example.com/step-6",
       ];
 
       const upperNodeLink = "https://www.google.com";
@@ -273,14 +257,14 @@
             maxTextWidth,
             boxFontWeight,
           );
-          const headingGap = headingLines.length && bodyLines.length ? 6 : 0;
+          const headingGap = headingLines.length && bodyLines.length ? 5 : 0;
           const lineCount = headingLines.length + bodyLines.length;
           const textHeight =
             lineCount * boxLineHeight + headingGap + boxTextPaddingY * 2;
 
           return {
             x: node.x - boxWidth / 2,
-            y: node.y + nodeRadius + 20,
+            y: node.y + nodeRadius + 10,
             headingLines,
             bodyLines,
             headingGap,
@@ -427,7 +411,7 @@
           text
             .append("tspan")
             .attr("x", leftX)
-            .attr("y", cursorY)
+            .attr("y", cursorY + 10)
             .attr("font-weight", 700)
             .text(line);
           cursorY += boxLineHeight;
@@ -441,7 +425,7 @@
           text
             .append("tspan")
             .attr("x", leftX)
-            .attr("y", cursorY)
+            .attr("y", cursorY + 10)
             .attr("font-weight", boxFontWeight)
             .text(line);
           cursorY += boxLineHeight;
