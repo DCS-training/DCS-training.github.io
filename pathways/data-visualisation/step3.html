@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Step 2 Data Visualisation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #000;
+        }
+        h1 {
+            margin-top: 2rem;
+            text-align: centre;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .column {
+            background: #fff;
+            border: 2px solid #000;
+            flex: 1 1 300px;
+            max-width: 32%;
+            box-sizing: border-box;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 250px;
+        }
+        .column img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+            border-radius: 6px;
+        }
+        .column h4 {
+            margin-top: 0;
+        }
+        @media (max-width: 900px) {
+            .row {
+                flex-direction: column;
+            }
+            .column {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        ul {
+            margin-left: 1.5em;
+        }
+        /* --- MEDIA BLOCKS STYLE --- */
+        .media-row {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fff;
+            padding: 1.5em;
+            gap: 2rem;
+        }
+        .media-text {
+            flex: 1 1 50%;
+            min-width: 250px;
+        }
+        .media-video {
+            flex: 1 1 50%;
+            max-width: 608px;
+            text-align: centre;
+        }
+        .media-video img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .media-video iframe {
+             width: 100%;
+             max-width: 608px;
+             height: 340px;
+             border-radius: 8px;
+             display: block;
+            }
+
+        @media (max-width: 900px) {
+            .media-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .media-video, .media-text {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Principles of relational Databases</h1>
+        <p>Relational Databases collect information in a structured way and enforce relationships about what goes in and out. This provides additional control over editing processes and will reduce data entry time and errors. In a relational database, data in a table can be related according to common keys or concepts. Relationships are a logical connection between different tables and are defined based on the interaction among the tables.</p>
+        
+        <h2>Do I Need a Database or is a Spreadsheet is Enough?</h2> 
+        
+        <p>Not all research projects require a database. However there are a series of data characteristics that suggest that building a database would be a good idea.</p>
+        <p>If you would answer yes to two or more of the following questions, it may be a good idea to look into relational databases:</p>
+        <ol>
+            <li>Does more than one person have to do data entry at the same time? </li>
+            <li>Do you often find yourself copy/pasting data in your spreadsheet?</li>
+            <li>Do you usually have more than one tab/spreadsheet open and often have to move data from one to the other? </li>
+            <li>Do you have so much data that it is difficult to manage? </li>
+            <li>Do you sometimes discover data entry errors and wonder how/when they happened?</li>
+        </ol>
+
+         <a href="https://365datascience.com/tutorials/sql-tutorials/database-vs-spreadsheet/">Databases vs Spreadsheets</a>
+         <a href="https://www.datacamp.com/blog/database-vs-spreadsheet">Blog on Spreadsheets vs Databases</a>
+        <p> </p>
+        <p> </p>
+        <p><strong>Concepts of relational databases </strong> </p>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Relational_database">Relational Database principles</a></li>
+            <li><a href="https://gmod.org/wiki/A_Brief_Guide_to_Databases#Tables.2C_Records.2C_and_Attributes">Tables, rows, and columns</a></li>
+            <li><a href="http://www.sqlcourse.com/intro.html">SQL</a></li>
+            <li><a href="https://www.atlassian.com/data/databases/how-to-select-the-right-data-types#:~:text=The%20basic%20strategy%20for%20selecting,whole%20number%20starting%20with%200.">Data Types</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD (create, read, update, delete) Tasks</a></li>
+            <li><a href="https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?printable=1&id=2786">Database Life Cycle</a></li>
+            <li><a href="https://www.bbc.co.uk/bitesize/guides/z4wf8xs/revision/4">Table Keys</a></li>
+            <li><a href="https://www.youtube.com/watch?v=f2BfU4Ye4sY">Relationship Types </a></li>
+            <li><a href="https://www.guru99.com/database-normalization.html">Database Normalisation</a></li>
+            <li><a href="https://www.w3schools.com/sql/">Queries</a></li>
+            <li><a href="https://www.geeksforgeeks.org/sql-views/">Views</a></li>
+        </ul>
+        
+
+         <h2>Where to find more information</h2>
+
+         <div class="row">
+            <div class="column">
+                <h3>Our Tutorials</h3>
+                <img src="../../images/Class black and white.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://github.com/DCS-training/RelationalDBAndSQL" target="_blank">Relational DB And SQL</a></li>
+                     <li><a href="https://github.com/DCS-training/IntroToDatabases" target="_blank">Intro To Databases Tutorials/a></li>
+                </ul>
+                
+            </div>
+             <div class="column">
+                <h3>UoE Resources</h3>
+                <img src="../../images/Playfair Header.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://information-services.ed.ac.uk/help-consultancy/is-skills/programmes-courses-and-toolkits/development-programmes/data-skills" target="_blank">Developing your Data Skills (Information Services)</a></li>
+                     <li><a href="https://media.ed.ac.uk/channel/Inf1-DA+2017_18/170184951" target="_blank">Introduction to Databases (Video) </a></li>
+                          
+                    </ul>
+                
+            </div>
+             <div class="column">
+                <h3>Self-Guided Learning</h3>
+                <img src="../../images/Group with basket sepia.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://www.w3schools.com/sql/" target="_blank">SQL Tutorials (W3 Schools)</a></li>
+                     <li><a href="https://www.datacamp.com/courses/introduction-to-sql" target="_blank">Data Camp Introduction to SQL</a></li>
+                     <li><a href="https://carpentries-incubator.github.io/sql-humanities-lesson/" target="_blank">SQL for Humanities (The Carpentries)</a></li>
+                     <li><a href="https://datacarpentry.github.io/sql-socialsci//index.html" target="_blank"> SQL for Social Scientists (The Carpentries)</a></li>
+                     <li><a href="https://datacarpentry.github.io/sql-ecology-lesson/" target="_blank">Data Management with SQL for Ecologists (The Carpentries)</a></li>
+                     <li><a href="https://www.linkedin.com/learning/learning-relational-databases-2" target="_blank">Learning Relational Databases (Linkedin Learning Video)</a></li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+  <a href="visualisation-home-page.html"
+     style="
+       display: inline-block;
+       padding: 0.75rem 2rem;
+       background: #e7135d ;
+       color: #fff;
+       font-size: 1.1rem;
+       font-family: 'Montserrat', sans-serif;
+       border-radius: 5px;
+       text-decoration: none;
+   ">
+    Back to the Data Visualisation Pathway Homepage
+  </a>
+</div>
+
+
+
+</div>
+</body>
+</html>

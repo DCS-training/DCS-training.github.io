@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Step 2 Data Visualisation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #000;
+        }
+        h1 {
+            margin-top: 2rem;
+            text-align: centre;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .column {
+            background: #fff;
+            border: 2px solid #000;
+            flex: 1 1 300px;
+            max-width: 32%;
+            box-sizing: border-box;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 250px;
+        }
+        .column img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+            border-radius: 6px;
+        }
+        .column h4 {
+            margin-top: 0;
+        }
+        @media (max-width: 900px) {
+            .row {
+                flex-direction: column;
+            }
+            .column {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        ul {
+            margin-left: 1.5em;
+        }
+        /* --- MEDIA BLOCKS STYLE --- */
+        .media-row {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fff;
+            padding: 1.5em;
+            gap: 2rem;
+        }
+        .media-text {
+            flex: 1 1 50%;
+            min-width: 250px;
+        }
+        .media-video {
+            flex: 1 1 50%;
+            max-width: 608px;
+            text-align: centre;
+        }
+        .media-video img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .media-video iframe {
+             width: 100%;
+             max-width: 608px;
+             height: 340px;
+             border-radius: 8px;
+             display: block;
+            }
+
+        @media (max-width: 900px) {
+            .media-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .media-video, .media-text {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Wrangling</h1>
+        <p>If you have your data in a database, you may have done some data wrangling already. Data wrangling is the process of collecting, selecting, and transforming your data in order to answer to your research question. Also known as data cleaning, it takes a lot more time than you might think.</p>
+        <p>In general, it is always a good idea to do data wrangling in either Python or R as they will automatically retain all steps performed (if you do not cancel the code) and therefore it will be easy to review each stage and also demonstrate your steps, if required by reviewers or publishers. At the same time, they allow you to perform similar data cleaning tasks by quickly modifying the original code, thereby speeding up your data wrangling process. </p>
+      
+        
+        <h2>What exactly is Data Wrangling?</h2> 
+        
+        <p>The most common actions that feel under the data wrangling umbrella are the following:</p>
+        <ul>
+            <li>Changing the format of your variables (number, integer, character, etc...) </li>
+            <li>Reshaping data (Pivoting tables, stack/unstack, melt tables, etc...)/li>
+            <li>Indexing </li>
+            <li>Duplicating data</li>
+            <li>Grouping data (aggregation)</li>
+            <li>Dealing with missing data </li>
+            <li>Combining data (join, concatenate) </li>
+        </ul>
+
+         <a href="https://www.elderresearch.com/blog/what-is-data-wrangling-and-why-does-it-take-so-long">More information: What is data wrangling and why it can take so long?</a>
+        <p> </p>
+        <p> </p>
+        <p><strong>Data Wrangling with Python and R </strong> </p>
+        <p>One of the most popular Python libraries for data wrangling is Pandas. Pandas aims to be the fundamental high-level building block for doing practical, real-world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis and manipulation tool available in any language.</p>
+        <p>Data wrangling in R is mainly done via the Tidyverse package suite. The Tidyverse is a collection of packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.</p>
+        
+        <a href="https://pandas.pydata.org/about/index.html">Pandas</a>
+        <a href="hhttps://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Pandas_Cheat_Sheet_2.pdf">Pandas Cheat Sheet</a>
+        <a href="https://tidyverse.org/">Tidyverse</a>
+        <a href="https://www.datacamp.com/cheat-sheet/tidyverse-cheat-sheet-for-beginners">Tidyverse Cheat Sheet</a>
+
+         <h2>Where to find more information</h2>
+
+         <div class="row">
+            <div class="column">
+                <h3>Our Tutorials</h3>
+                <img src="../../images/Class black and white.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://dcs-training.github.io/Tutorials/SPSSTutorial.html" target="_blank">SPSS to R Conversion Course</a></li>
+                     <li><a href="https://github.com/DCS-training/Data-Wrangling-And-Vis-Pandas" target="_blank">Data Wrangling And Vis Pandas </a></li>
+                     <li><a href="https://github.com/DCS-training/A-Pipeline-for-Data-Wrangling-and-Manipulation-with-R" target="_blank">A Pipeline for Data Wrangling and Manipulation with R </a></li>
+                     <li><a href="https://github.com/DCS-training/Data-Science-in-the-Wild" target="_blank">Data Science in the Wild </a></li>
+                    <li><a href="https://github.com/DCS-training/Much-ado-about-nothing-missing-data-in-research" target="_blank"> Much Ado About Nothing. Missing Data in Research </a></li>
+                    <li><a href="https://github.com/DCS-training/IntroToPython" target="_blank"> Intro to Python</a></li>
+                    <li><a href="https://github.com/DCS-training/IntroToRAndRStudio" target="_blank">Intro to R and RStudio </a></li>
+                </ul>
+                
+            </div>
+             <div class="column">
+                <h3>UoE Resources</h3>
+                <img src="../../images/Playfair Header.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://information-services.ed.ac.uk/help-consultancy/is-skills/programmes-courses-and-toolkits/development-programmes/data-skills" target="_blank">Developing your Data Skills (Information Services)</a></li>
+                     <li><a href="https://media.ed.ac.uk/channel/Inf1-DA+2017_18/170184951" target="_blank">Data & Analysis (Video) </a></li>
+                     <li><a href="https://media.ed.ac.uk/media/IDS%20-%20Week%2003%20-%2003%20-%20Grammar%20of%20data%20wrangling/1_meyz4shf" target="_blank">Grammar of Data Wrangling (Video) </a></li>    
+                    </ul>
+                
+            </div>
+             <div class="column">
+                <h3>Self-Guided Learning</h3>
+                <img src="../../images/Group with basket sepia.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://www.coursera.org/specializations/data-wrangling-python" target="_blank">Data Wrangling with Python (Coursera)</a></li>
+                     <li><a href="https://www.coursera.org/learn/python-data-analysis" target="_blank">Introduction to Data Science in Python</a></li>
+                     <li><a href="https://www.linkedin.com/learning/paths/master-python-for-data-science" target="_blank">Advance Your Python Skills for Data Science (Linkedin Learning Video)</a></li>
+                     <li><a href="https://www.linkedin.com/learning/pandas-for-data-science" target="_blank"> Pandas for Data Science (Linkedin Learning Video)</a></li>
+                     <li><a href="https://www.linkedin.com/learning/data-wrangling-in-r" target="_blank">Data Wrangling in R (Linkedin Learning Video)</a></li>
+                     <li><a href="https://www.linkedin.com/learning/r-essential-training-wrangling-and-visualizing-data" target="_blank">R Essential Training: Wrangling and Visualizing Data(Linkedin Learning Video)</a></li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+  <a href="visualisation-home-page.html"
+     style="
+       display: inline-block;
+       padding: 0.75rem 2rem;
+       background: #e7135d ;
+       color: #fff;
+       font-size: 1.1rem;
+       font-family: 'Montserrat', sans-serif;
+       border-radius: 5px;
+       text-decoration: none;
+   ">
+    Back to the Data Visualisation Pathway Homepage
+  </a>
+</div>
+
+
+
+</div>
+</body>
+</html>

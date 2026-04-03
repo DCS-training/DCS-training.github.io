@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Step 2 Data Visualisation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #000;
+        }
+        h1 {
+            margin-top: 2rem;
+            text-align: centre;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .column {
+            background: #fff;
+            border: 2px solid #000;
+            flex: 1 1 300px;
+            max-width: 32%;
+            box-sizing: border-box;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 250px;
+        }
+        .column img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+            border-radius: 6px;
+        }
+        .column h4 {
+            margin-top: 0;
+        }
+        @media (max-width: 900px) {
+            .row {
+                flex-direction: column;
+            }
+            .column {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        ul {
+            margin-left: 1.5em;
+        }
+        /* --- MEDIA BLOCKS STYLE --- */
+        .media-row {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fff;
+            padding: 1.5em;
+            gap: 2rem;
+        }
+        .media-text {
+            flex: 1 1 50%;
+            min-width: 250px;
+        }
+        .media-video {
+            flex: 1 1 50%;
+            max-width: 608px;
+            text-align: centre;
+        }
+        .media-video img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .media-video iframe {
+             width: 100%;
+             max-width: 608px;
+             height: 340px;
+             border-radius: 8px;
+             display: block;
+            }
+
+        @media (max-width: 900px) {
+            .media-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .media-video, .media-text {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analyse and Modify Data with SQL</h1>
+        <p>Once you've created a database and populated it with your data, you can easily manipulate the data, producing extractions and aggregations for visualisation and further analysis with Python and R. </p>
+        <p>This data manipulation is done via queries that use the SQL language. </p>
+        <a href="http://www.sqlcourse.com/intro.html">What is SQL?</a>
+        
+        <h2>What is a query?</h2> 
+        
+        <p>Requests for information from databases are done via queries. These queries are written in a language understandable by the database, usually SQL. It is always a good idea to start building your query by clearly setting out what you are trying to do and, after that, translating it into a language understandable by the computer</p>
+        <p>Through the queries, you can perform a series of tasks within your database. The main actions you can take on your data are:</p>
+        <ul>
+            <li>Select </li>
+            <li>Order</li>
+            <li>Alter </li>
+            <li>Aggregate</li>
+            <li>Join</li>
+            <li>Extract </li>
+        </ul>
+
+         <a href="https://www.w3schools.com/sql/">How to Build SQL Queries</a>
+        <p> </p>
+        <p> </p>
+        <p><strong>Extracting views </strong> </p>
+        <p>An important task that you can perform via queries is creating 'views' of your data.</p>
+        <p>Views are virtual tables, containing subsets and aggregations of your dataset. Depending on the research question you want to answer, you may need to extract different views on which to perform further analysis. </p>
+        <p>Views can be saved and exported to be used in different software (e.g. Python and R). This is particularly useful if you have a very big database that might slow down analysis in R and Python: working on views rather than on the whole dataset will reduce the processing times. </p>
+        <a href="https://www.geeksforgeeks.org/sql/sql-views/">More on Views</a>
+
+         <h2>Where to find more information</h2>
+
+         <div class="row">
+            <div class="column">
+                <h3>Our Tutorials</h3>
+                <img src="../../images/Class black and white.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://github.com/DCS-training/RelationalDBAndSQL" target="_blank">Relational DB And SQL</a></li>
+                     <li><a href="https://github.com/DCS-training/IntroToDatabases" target="_blank">Intro To Databases Tutorials</a></li>
+                </ul>
+                
+            </div>
+             <div class="column">
+                <h3>UoE Resources</h3>
+                <img src="../../images/Playfair Header.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://information-services.ed.ac.uk/help-consultancy/is-skills/programmes-courses-and-toolkits/development-programmes/data-skills" target="_blank">Developing your Data Skills (Information Services)</a></li>
+                     <li><a href="https://media.ed.ac.uk/channel/Inf1-DA+2017_18/170184951" target="_blank">Introduction to Databases (Video) </a></li>
+                     <li><a href="https://www.geeksforgeeks.org/sql/sql-views/" target="_blank">SQL Queries (Video) </a></li>    
+                    </ul>
+                
+            </div>
+             <div class="column">
+                <h3>Self-Guided Learning</h3>
+                <img src="../../images/Group with basket sepia.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://www.w3schools.com/sql/" target="_blank">SQL Tutorials (W3 Schools)</a></li>
+                     <li><a href="https://www.datacamp.com/courses/introduction-to-sql" target="_blank">Data Camp Introduction to SQL</a></li>
+                     <li><a href="https://carpentries-incubator.github.io/sql-humanities-lesson/" target="_blank">SQL for Humanities (The Carpentries)</a></li>
+                     <li><a href="https://datacarpentry.github.io/sql-socialsci//index.html" target="_blank"> SQL for Social Scientists (The Carpentries)</a></li>
+                     <li><a href="https://datacarpentry.github.io/sql-ecology-lesson/" target="_blank">Data Management with SQL for Ecologists (The Carpentries)</a></li>
+                     <li><a href="https://www.linkedin.com/learning/sql-essential-training-2" target="_blank">SQL Essential Training (Linkedin Learning Video)</a></li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+  <a href="visualisation-home-page.html"
+     style="
+       display: inline-block;
+       padding: 0.75rem 2rem;
+       background: #e7135d ;
+       color: #fff;
+       font-size: 1.1rem;
+       font-family: 'Montserrat', sans-serif;
+       border-radius: 5px;
+       text-decoration: none;
+   ">
+    Back to the Data Visualisation Pathway Homepage
+  </a>
+</div>
+
+
+
+</div>
+</body>
+</html>
