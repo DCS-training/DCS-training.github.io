@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Step 6 Data Visualisation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #000;
+        }
+        h1 {
+            margin-top: 2rem;
+            text-align: centre;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .column {
+            background: #fff;
+            border: 2px solid #000;
+            flex: 1 1 300px;
+            max-width: 32%;
+            box-sizing: border-box;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 250px;
+        }
+        .column img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+            border-radius: 6px;
+        }
+        .column h4 {
+            margin-top: 0;
+        }
+        @media (max-width: 900px) {
+            .row {
+                flex-direction: column;
+            }
+            .column {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        ul {
+            margin-left: 1.5em;
+        }
+        /* --- MEDIA BLOCKS STYLE --- */
+        .media-row {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fff;
+            padding: 1.5em;
+            gap: 2rem;
+        }
+        .media-text {
+            flex: 1 1 50%;
+            min-width: 250px;
+        }
+        .media-video {
+            flex: 1 1 50%;
+            max-width: 608px;
+            text-align: centre;
+        }
+        .media-video img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .media-video iframe {
+             width: 100%;
+             max-width: 608px;
+             height: 340px;
+             border-radius: 8px;
+             display: block;
+            }
+
+        @media (max-width: 900px) {
+            .media-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .media-video, .media-text {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Building Graphs</h1>
+        <p>Now that you've got most of the work done, and your data have been cleaned, organised, and prepared, you can finally proceed to create good and reproducible visualisations.</p>
+        <p>As a researcher, you are often tasked with presenting results, making it important to be able to present the content clearly: visualisations communicate the results of your analysis in a coherent and reproducible way.</p>
+        <p>If you've done your <a href="step5.html" target="_blank">data wrangling step </a>in either Python or R (or even via OpenRefine), you will have also automatically retained all steps performed (if you have not cancelled the code) and therefore it will be easy to review each stage and also demonstrate your steps if required by the reviewers or publishers.</p>
+        
+        <h2>Principles of Good Data Visualisation</h2> 
+        
+        <p>In order to produce good visualisations there are a series of principles to keep in mind:</p>
+        <ul>
+            <li>Think about what are you trying to convey and choose the right type of graph accordingly</li>
+            <li>Be accurate and clear e.g. make sure the unit of measurements are clearly expressed</li>
+            <li>Let the data speak: show as much information as possible without hiding any aspects of the data</li>
+            <li>Avoid unnecessary frills and showing off. Less is usually more in visualisations, making them clearer and better</li>
+            <li>Avoid pie charts: they can be very misleading (there are exception to this rule but if you have more than 3-4 categories pie charts are to be avoided because the human eye is not really trained to interpret angles)</li>
+            <li>Consider the medium in which the visualisation will be presented: will the graph be printed or online? how big will it be?</li>
+        </ul>
+
+         <a href="https://www.biostat.wisc.edu/~kbroman/presentations/graphs2017.pdf">Creating effective figures and tables</a>
+
+         <h2>How to choose the right graph?</h2> 
+        <p>Choosing the right graph is a really important step in creating clear and informative visualisations:</p>
+        <ul>
+            <li><strong>Distribution:</strong> Violin, Density, Histogram, Boxplot, Ridgeline</li>
+            <li><strong>Correlation:</strong>Scatter, Heatmap, Correlogram, Bubble, Connected Scatter, Density 2d </li>
+            <li><strong>Ranking:</strong>Barplot, Spider/Radar, Worldcloud, Lollipop, Circular Barplot </li>
+            <li><strong>Part of a whole:</strong>Grouped/Stacked Barplot, Treemap, Doughnut, Pie Chart, Dendrogram, Circular Packing </li>
+            <li><strong>Evolution:</strong>Line Plot, Area, Streamchart, Time Series </li>
+            <li><strong>Maps:</strong>Choropleth, Hexbin Map, Cartogram, Connection, Bubble Map </li>
+            <li><strong>Flow:</strong>Chord Diagram, Network, Arc Diagram, Edge bungling </li>
+        </ul>
+        <a href="https://www.r-graph-gallery.com/">R Graph Gallery</a>
+        
+        <h2>Building Graphs with R and Python</h2> 
+        <p>Two very popular libraries are Matplotlib and Seaborn. <a href="https://matplotlib.org/" target="_blank">Matplotlib</a> is known for the high amount of flexibility it provides as a 2-D plotting library in Python. 
+           <a href="https://seaborn.pydata.org/" target="_blank">Seaborn</a> is based on Matplotlib for drawing attractive and informative statistical graphics. 
+           Other visualisation libraries are <a href="https://www.analyticsvidhya.com/blog/2015/08/interactive-data-visualization-library-python-bokeh/?utm_source=blog&utm_medium=6-data-visualization-python-libraries" target="_blank">Bokeh</a>, <a href="https://altair-viz.github.io/" target="_blank">Altair</a>,
+          <a href="https://plotly.com/python/" target="_blank">Plotly</a>, and <a href="https://realpython.com/ggplot-python/" target="_blank">Ggplot</a></p>
+
+        <p>Data visualisation in R is mainly done via <a href="https://www.statmethods.net/advgraphs/ggplot2.html" target="_blank">Ggplot</a>. 
+            It offers a powerful graphics language for creating elegant and complex plots, with a clearly structured grammar that makes modifying and customising your graphs very easy. 
+           This principle is known as <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149/" target="_blank">Grammar of Graphics</a>. 
+           Certain types of graphs will need the use of some additional packages (e.g. in order to create Treemaps you will need to install the <a href="https://www.r-graph-gallery.com/treemap.html" target="_blank">Treemap package</a>).</p>
+
+        <a href="https://www.analyticsvidhya.com/blog/2020/03/6-data-visualization-python-libraries/"> Data Visualisation with Python</a>
+        <a href="https://www.r-graph-gallery.com/"> Data Visualisation with R</a>
+        
+
+        <h2>Where to find more information</h2>
+
+         <div class="row">
+            <div class="column">
+                <h3>Our Tutorials</h3>
+                <img src="../../images/Class black and white.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://github.com/DCS-training/Data-Visualisation-Techniques" target="_blank">Data Visualisation Techniques</a></li>
+                     <li><a href="https://github.com/DCS-training/Good-Data-Visualisation-with-R" target="_blank">Good Data Visualisation With R </a></li>
+                     <li><a href="https://github.com/DCS-training/Exploratory-Data-Analysis-and-Visualisation-with-Observable-Plot" target="_blank">Exploratory Data Analysis and Visualisation with Observable Plot</a></li>
+                     <li><a href="https://github.com/DCS-training/Data-Wrangling-And-Vis-Pandas" target="_blank">Data Wrangling and Visualisation with Pandas (Python) </a></li>
+                     <li><a href="https://github.com/DCS-training/DataVisualisationWithR2021" target="_blank">Data Visualisation with RStudio </a></li>
+                     <li><a href="https://github.com/DCS-training/EffectiveDataVisualisation" target="_blank">Effective Data Visualisation </a></li>
+                     <li><a href="https://github.com/DCS-training/SpatialDataVisualisation" target="_blank">Spatial Data Visualisation </a></li>
+                     <li><a href="https://github.com/DCS-training/VisualisingDataInQGIS" target="_blank">Visualising Data in QGis </a></li>
+                     <li><a href="https://github.com/DCS-training/custom-dataviz-observable" target="_blank">Costum Data Visualisation with Observable </a></li>
+                     <li><a href="https://github.com/DCS-training/DH-RSESummerSchool2024/tree/main/day%201" target="_blank"> Data Visualisation with R and D3</a></li>
+                     <li><a href="https://github.com/DCS-training/ScottishAccounts" target="_blank">Visualising the Scottish Statistical Accounts Data</a></li>
+                </ul>
+                
+            </div>
+             <div class="column">
+                <h3>UoE Resources</h3>
+                <img src="../../images/Playfair Header.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://information-services.ed.ac.uk/help-consultancy/is-skills/programmes-courses-and-toolkits/development-programmes/data-skills" target="_blank">Developing your Data Skills (Information Services)</a></li>
+                     <li><a href="https://media.ed.ac.uk/media/IDS%20-%20Week%2002%20-%2003%20-%20Visualising%20data%20with%20ggplot2/1_nhkjgruh" target="_blank">Visualising Data with Ggplot2 (Video) </a></li>
+                     <li><a href="https://media.ed.ac.uk/media/IDS%20-%20Week%2002%20-%2002%20-%20Data%20and%20visualisation/1_4lhhe9i5" target="_blank">Data and Visualisation(Video) </a></li>    
+                     <li><a href="https://media.ed.ac.uk/media/IDS%20-%20Week%2005%20-%2002%20-%20Tips%20for%20effective%20data%20visualisation/1_nq2p4uwj" target="_blank">Tips for effective data visualisation (Video)</a></li>
+                     <li><a href="https://media.ed.ac.uk/media/IDS%20-%20Week%2005%20-%2002%20-%20Tips%20for%20effective%20data%20visualisation/1_nq2p4uwj" target="_blank">Tips for effective data visualisation (Video)</a></li>
+                    </ul>
+                
+            </div>
+             <div class="column">
+                <h3>Self-Guided Learning</h3>
+                <img src="../../images/Group with basket sepia.png" alt="Image of group in workshop">
+                <ul style="padding-left: 1em; margin-left: 0;">
+                     <li><a href="https://www.linkedin.com/learning/python-for-data-visualization" target="_blank">Python for Data Visualization (Linkedin Learning)</a></li>
+                     <li><a href="https://www.linkedin.com/learning/python-for-data-science-essential-training-part-1" target="_blank">Python for Data Science Essential Training Part 1 (Linkedin Learning)</a></li>
+                     <li><a href="https://www.linkedin.com/learning/python-data-analysis-2" target="_blank">Python Data Analysis (Linkedin Learning)</a></li>
+                     <li><a href="https://www.linkedin.com/learning/data-visualization-in-r-with-ggplot2" target="_blank">Data Visualization in R with ggplot2 (Linkedin Learning)</a></li>
+                     <li><a href="https://www.linkedin.com/learning/r-essential-training-wrangling-and-visualizing-data" target="_blank">R Essential Training: Wrangling and Visualizing Data (Linkedin Learning)</a></li>
+                     <li><a href="https://www.coursera.org/learn/jhu-data-visualization-r" target="_blank">Data Visualization in R with ggplot2 (Coursera)</a></li>
+                     <li><a href="https://www.coursera.org/learn/data-analysis-with-python" target="_blank">Data Analysis with Python (Coursera)</a></li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+  <a href="visualisation-home-page.html"
+     style="
+       display: inline-block;
+       padding: 0.75rem 2rem;
+       background: #e7135d ;
+       color: #fff;
+       font-size: 1.1rem;
+       font-family: 'Montserrat', sans-serif;
+       border-radius: 5px;
+       text-decoration: none;
+   ">
+    Back to the Data Visualisation Pathway Homepage
+  </a>
+</div>
+</div>
+</body>
+</html>
