@@ -27,9 +27,10 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         </ul>      
         </div>
         <div class="column">
-        <h4>Intro to Programming</h4>
+        <h4>Artificial Intelligence</h4>
         <img src="images/Map.png" alt="Image 2">
         <ul>
+           <li><a href="Tutorials/LocalLLMs.html">Working Locally with Small Language Models</a></li>
            <li>More to Come Soon</li>
         </ul>
         </div>
