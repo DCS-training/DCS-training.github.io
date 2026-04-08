@@ -28,7 +28,7 @@ excerpt: "This page is set up to facilitate the use of the CDCS repositories."
         </div>
         <div class="column">
         <h4>Intro to Programming</h4>
-        <img src="https://www.cdcs.ed.ac.uk/files/2023-09/MicrosoftTeams-image%20%2810%29.png" alt="Image 2">
+        <img src="images/Map.png" alt="Image 2">
         <ul>
            <li>More to Come Soon</li>
         </ul>
